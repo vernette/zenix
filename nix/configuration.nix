@@ -42,6 +42,10 @@
   programs = {
     zsh.enable = true;
     hyprland.enable = true;
+    nix-ld = {
+      enable = true;
+      libraries = [];
+    };
   };
 
   xdg.portal = {
