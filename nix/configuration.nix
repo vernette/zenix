@@ -4,13 +4,24 @@
   imports = [ 
     ./hardware-configuration.nix 
   ];
+  
+  boot = {
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.efiSupport = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.useOSProber = true;
-  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+    loader = { 
+
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+      };
+
+      timeout = 1;
+      efi.canTouchEfiVariables = true;
+    };
+
+    kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+  };
 
   networking = {
     hostName = "nixos";
