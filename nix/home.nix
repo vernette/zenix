@@ -12,14 +12,14 @@
       python313
       unzip
       zip
-      foot
+      # foot # VMs only
       kitty
       nautilus
       rofi-wayland
+      mako
       libnotify
       fastfetch
       eza
-      lsd
       fzf
       zoxide
       oh-my-posh
@@ -28,10 +28,16 @@
       sshfs
       unstable.ayugram-desktop
       dig
+      iperf3
       bat
       delta
       opencommit
       wl-clipboard
+      swww
+      hyprshot
+      hypridle
+      hyprlock
+      nvtopPackages.full
     ];
 
     stateVersion = "24.11";
