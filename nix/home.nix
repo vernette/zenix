@@ -26,6 +26,7 @@
       sshfs
       unstable.ayugram-desktop
       dig
+      bat
     ];
 
     stateVersion = "24.11";
