@@ -15,7 +15,6 @@
       nautilus
       rofi-wayland
       libnotify
-      librewolf
       fastfetch
       eza
       lsd
