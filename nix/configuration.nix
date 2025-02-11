@@ -5,8 +5,12 @@
     ./hardware-configuration.nix 
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.useOSProber = true;
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
   networking = {
     hostName = "nixos";
@@ -16,7 +20,17 @@
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  services.xserver.videoDrivers = ["nvidia"];
   services.displayManager.ly.enable = true;
+
+  hardware = {
+    graphics.enable = true;
+    nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+    nvidia.open = true;
+    nvidia.modesetting.enable = true;
+    nvidia.nvidiaSettings = true;
+    nvidia.powerManagement.enable = true;
+  };
 
   users.users.vernette = {
     isNormalUser = true;
@@ -37,10 +51,13 @@
 
   virtualisation.vmware.guest.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     ly
     gcc
     git
+    cudatoolkit
   ];
 
   fonts.packages = with pkgs; [
@@ -49,6 +66,11 @@
   ];
 
   services.openssh.enable = true;
+
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
 
   system.stateVersion = "24.11";
 }

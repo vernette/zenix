@@ -7,6 +7,7 @@
     
     packages = with pkgs; [
       neovim
+      ripgrep
       nodejs_20
       python313
       unzip
@@ -28,6 +29,9 @@
       unstable.ayugram-desktop
       dig
       bat
+      delta
+      opencommit
+      wl-clipboard
     ];
 
     stateVersion = "24.11";
