@@ -25,6 +25,7 @@
       yazi
       sshfs
       unstable.ayugram-desktop
+      dig
     ];
 
     stateVersion = "24.11";
