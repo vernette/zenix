@@ -20,7 +20,7 @@
 
   users.users.vernette = {
     isNormalUser = true;
-    extraGroups = [ "wheel", "docker" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
     home = "/home/vernette";
   };
