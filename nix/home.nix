@@ -50,10 +50,19 @@
   
   programs.git = {
     enable = true;
-    userName = "vernette";
+    userName = "Nikita Skryabin";
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        dark = true;
+        side-by-side = true;
+      };
+    };
     extraConfig = {
-      init.defaultBranch = "main";
+      init.defaultBranch = "master";
       pull.rebase = false;
+      merge.conflictstyle = "zdiff3";
     };
   };
 }
