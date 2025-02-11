@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, unstable, ... }:
 
 {
   home = {
@@ -18,14 +18,30 @@
       librewolf
       fastfetch
       eza
+      lsd
       fzf
       zoxide
       oh-my-posh
       krabby
       yazi
       sshfs
+      unstable.ayugram-desktop
     ];
 
     stateVersion = "24.11";
+  };
+
+  programs.firefox = {
+    enable = true;
+    package = pkgs.librewolf;
+  };
+  
+  programs.git = {
+    enable = true;
+    userName = "vernette";
+    extraConfig = {
+      init.defaultBranch = "main";
+      pull.rebase = false;
+    };
   };
 }
