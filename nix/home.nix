@@ -12,6 +12,7 @@
       unzip
       zip
       foot
+      kitty
       nautilus
       rofi-wayland
       libnotify
