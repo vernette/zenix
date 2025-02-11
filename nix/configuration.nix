@@ -27,9 +27,7 @@
 
   programs = {
     zsh.enable = true;
-    hyprland = {
-      enable = true;
-    };
+    hyprland.enable = true;
   };
 
   xdg.portal = {
