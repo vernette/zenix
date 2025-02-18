@@ -67,7 +67,7 @@
     ];
   };
 
-  virtualisation.vmware.guest.enable = true;
+  # virtualisation.vmware.guest.enable = true; # VMs only
 
   nixpkgs.config.allowUnfree = true;
 
@@ -89,6 +89,7 @@
     enable = true;
     acceleration = "cuda";
   };
+  services.open-webui.enable = true;
 
   system.stateVersion = "24.11";
 }
