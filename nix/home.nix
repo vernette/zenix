@@ -38,6 +38,7 @@
       hypridle
       hyprlock
       nvtopPackages.full
+      btop
     ];
 
     stateVersion = "24.11";
