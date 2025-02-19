@@ -40,6 +40,8 @@
       nvtopPackages.full
       btop
       unstable.code-cursor
+      pass
+      obs-studio
     ];
 
     stateVersion = "24.11";

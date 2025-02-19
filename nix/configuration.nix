@@ -52,6 +52,12 @@
     home = "/home/vernette";
   };
 
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+  services.pcscd.enable = true;
+
   programs = {
     zsh.enable = true;
     hyprland.enable = true;
