@@ -39,6 +39,7 @@
       hyprlock
       nvtopPackages.full
       btop
+      unstable.code-cursor
     ];
 
     stateVersion = "24.11";
