@@ -21,19 +21,51 @@
       };
     in
     {
-      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.vernette = import ./home.nix;
-            home-manager.extraSpecialArgs = { inherit unstable; };
-          }
-        ];
-        specialArgs = { inherit unstable; };
+      nixosConfigurations = {
+        arcadia = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/arcadia
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.vernette = import ./home/profiles/arcadia.nix;
+              home-manager.extraSpecialArgs = { inherit unstable; };
+            }
+          ];
+          specialArgs = { inherit unstable; };
+        };
+
+        luminous = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/luminous
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.vernette = import ./home/profiles/luminous.nix;
+              home-manager.extraSpecialArgs = { inherit unstable; };
+            }
+          ];
+          specialArgs = { inherit unstable; };
+        };
+
+        vm = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/vm
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.vernette = import ./home/profiles/vm.nix;
+              home-manager.extraSpecialArgs = { inherit unstable; };
+            }
+          ];
+          specialArgs = { inherit unstable; };
+        };
       };
     };
 }

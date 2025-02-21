@@ -12,7 +12,6 @@
       python313
       unzip
       zip
-      # foot # VMs only
       kitty
       nautilus
       rofi-wayland
@@ -26,7 +25,6 @@
       krabby
       yazi
       sshfs
-      unstable.ayugram-desktop
       dig
       iperf3
       bat
@@ -37,11 +35,8 @@
       hyprshot
       hypridle
       hyprlock
-      nvtopPackages.full
       btop
-      unstable.code-cursor
       pass
-      obs-studio
     ];
 
     stateVersion = "24.11";
