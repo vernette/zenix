@@ -23,6 +23,7 @@
   hardware = {
     bluetooth.enable = true;
     pulseaudio.enable = false;
+    enableRedistributableFirmware = true;
   };
 
   services.pipewire = {
