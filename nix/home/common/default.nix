@@ -37,6 +37,8 @@
       hyprlock
       btop
       pass
+      wlogout
+      jq
     ];
 
     stateVersion = "24.11";
@@ -45,7 +47,24 @@
   programs.firefox = {
     enable = true;
     package = pkgs.librewolf;
-  };
+    policies = {
+      ExtensionSettings = with builtins;
+        let extension = shortId: uuid: {
+          name = uuid;
+          value = {
+            install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+            installation_mode = "normal_installed";
+          };
+        };
+        in listToAttrs [
+          (extension "ublock-origin" "uBlock0@raymondhill.net")
+          (extension "darkreader" "addon@darkreader.org")
+          (extension "xbs" "{019b606a-6f61-4d01-af2a-cea528f606da}")
+          (extension "sponsorblock" "sponsorBlocker@ajay.app")
+          (extension "foxyproxy-standard" "foxyproxy@eric.h.jung")
+        ];
+      };
+    };
   
   programs.git = {
     enable = true;
