@@ -37,6 +37,7 @@
       hyprlock
       btop
       pass
+      nekoray
     ];
 
     stateVersion = "24.11";
