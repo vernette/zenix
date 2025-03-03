@@ -29,7 +29,7 @@
       iperf3
       bat
       delta
-      opencommit
+      unstable.opencommit
       wl-clipboard
       swww
       hyprshot
