@@ -40,6 +40,8 @@
       nekoray
       wlogout
       jq
+      statix
+      alejandra
     ];
 
     stateVersion = "24.11";
