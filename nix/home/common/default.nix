@@ -42,6 +42,7 @@
       jq
       statix
       alejandra
+      stow
     ];
 
     stateVersion = "24.11";
