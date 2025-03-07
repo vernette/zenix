@@ -43,6 +43,7 @@
       statix
       alejandra
       stow
+      gnumake
     ];
 
     stateVersion = "24.11";
