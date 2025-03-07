@@ -29,6 +29,7 @@ require("lazy").setup({
     { import = "plugins.ui" },
     { import = "plugins.misc" },
     { import = "plugins.lsp" },
+    { import = "plugins.ai" },
     -- { import = "plugins.git" },
     -- { import = "plugins.completions" },
     -- { import = "plugins.markdown" },
