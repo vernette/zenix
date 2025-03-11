@@ -5,8 +5,9 @@ return {
     opts = require("configs.mason")
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    dependencies = { "williamboman/mason-lspconfig.nvim" },
     event = "VeryLazy",
-    opts = require("configs.mason-lspconfig")
+    opts = require("configs.mason-tool-installer")
   }
 }
