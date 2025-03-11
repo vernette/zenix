@@ -1,1 +1,6 @@
-return { { auto_install = true } }
+return {
+  ensure_installed = {
+    "lua_ls",
+    "basedpyright"
+  }
+}
