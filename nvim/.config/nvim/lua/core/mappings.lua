@@ -46,3 +46,7 @@ map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show Diagnostics" })
 
 -- Outline
 map("n", "<leader>ps", ":Outline<CR>", { desc = "Toggle Outline" })
+
+-- Markdown
+map("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+map("n", "<leader>mr", ":Markview toggle<CR>", { desc = "Toggle Markdown Rendering" })
