@@ -30,48 +30,15 @@ return {
         python = {
           analysis = {
             -- Ignore all files for analysis to exclusively use Ruff for linting
-            ignore = { '*' },
+            ignore = { "*" },
           },
-        }
+        },
       },
     },
 
-    ruff = {
-      init_options = {
-        settings = {
-          lint = {
-            select = {
-              -- https://docs.astral.sh/ruff/rules
-              "E",
-              "F",
-              "UP",
-              "N",
-              "I",
-              "ASYNC",
-              "S",
-              "PTH",
-              "B",
-              "W",
-              "Q",
-              "C",
-              -- "D", -- Missing docstring in public module
-              "T10",
-              "R",
-              "G",
-              "PT"
-            },
-            ignore = {"Q000"},
-            ["line-length"] = 79,
-          },
-
-          format = {
-            -- TODO: Add settings for quotes
-            ["line-length"] = 79,
-          },
-        }
-      }
-    },
-
-    bashls = {}
+    ruff = {}, -- For linting and code actions, formatter is configured in configs/conform.lua
+    bashls = {},
+    dockerls = {},
+    nil_ls = {},
   },
 }
