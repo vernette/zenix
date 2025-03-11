@@ -44,7 +44,9 @@ map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
 map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show Diagnostics" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
-map("n", "<leader>fm", vim.lsp.buf.format, { desc = "Format Buffer" })
+
+-- Conform
+map("n", "<leader>fm", function() require("conform").format({ async = true }) end, { desc = "Format Buffer" })
 
 -- Outline
 map("n", "<leader>ps", ":Outline<CR>", { desc = "Toggle Outline" })
