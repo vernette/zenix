@@ -12,5 +12,6 @@ return {
     telescope.setup(require("configs.telescope"))
     telescope.load_extension("ui-select")
     telescope.load_extension("import")
+    telescope.load_extension("fzf")
   end
 }
