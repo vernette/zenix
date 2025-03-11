@@ -23,9 +23,58 @@ return {
         },
       },
     },
+    basedpyright = {
+      on_attach = function(client, bufnr)
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+      end,
+      settings = {
+        basedpyright = {
+          disableTaggedHints = true,
+          disableOrganizeImports = true,
+        },
 
-    -- pyright = {},
-    -- tsserver = {},
-    -- и т.д.
+        python = {
+          analysis = {
+            -- Ignore all files for analysis to exclusively use Ruff for linting
+            ignore = { '*' },
+          },
+        }
+      },
+    },
+    ruff = {
+      init_options = {
+        settings = {
+          lint = {
+            select = {
+              -- https://docs.astral.sh/ruff/rules
+              "E",
+              "F",
+              "UP",
+              "N",
+              "I",
+              "ASYNC",
+              "S",
+              "PTH",
+              "B",
+              "W",
+              "Q",
+              "C",
+              -- "D", -- Missing docstring in public module
+              "T10",
+              "R",
+              "G",
+              "PT"
+            },
+            ignore = {"Q000"},
+            ["line-length"] = 79,
+          },
+
+          format = {
+            -- TODO: Add settings for quotes
+            ["line-length"] = 79,
+          },
+        }
+      }
+    },
   },
 }
