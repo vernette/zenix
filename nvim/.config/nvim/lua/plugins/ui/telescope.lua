@@ -4,6 +4,7 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope-ui-select.nvim" },
     { "piersolenski/telescope-import.nvim" },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
   },
   event = "VeryLazy",
   config = function()
