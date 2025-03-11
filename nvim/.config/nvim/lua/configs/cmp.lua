@@ -55,7 +55,6 @@ return {
       priority = 350,
     },
   }),
-  -- Command line setup
   cmdline = {
     search = {
       mapping = require("cmp").mapping.preset.cmdline(),

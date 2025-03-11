@@ -18,8 +18,7 @@ return {
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-cmdline" },
       { "SergioRibera/cmp-dotenv" },
-      -- LSP sources are commented out for now
-      -- { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-nvim-lsp" },
     },
     event = "BufReadPost",
     config = function()
