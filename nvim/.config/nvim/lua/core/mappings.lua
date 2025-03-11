@@ -7,6 +7,16 @@ end
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Buffers navigation
+map("n", "[b", ":bnext<CR>", { desc = "Previous Buffer" })
+map("n", "]b", ":bprevious<CR>", { desc = "Next Buffer" })
+
+-- Better window navigation
+map("n", "<C-h>", "<C-w>h", { desc = "Move left" })
+map("n", "<C-j>", "<C-w>j", { desc = "Move down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Move up" })
+map("n", "<C-l>", "<C-w>l", { desc = "Move right" })
+
 -- NvimTree
 map("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 map("n", "<leader>e", ":NvimTreeFocus<CR>", { desc = "Focus NvimTree" })
