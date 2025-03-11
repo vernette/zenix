@@ -25,6 +25,6 @@ return {
     "biome",
 
     -- JavaScript, HTML, CSS, Markdown, JSON and YAML formatters
-    "prettierd"
+    "prettierd",
   },
 }

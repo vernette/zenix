@@ -1,5 +1,5 @@
 return {
   "rcarriga/nvim-notify",
   event = "BufReadPre",
-  opts = require("configs.notify")
+  opts = require("configs.notify"),
 }

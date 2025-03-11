@@ -11,7 +11,7 @@ return {
   extensions = {
     ["ui-select"] = { require("telescope.themes").get_dropdown({}) },
     import = { insert_at_top = true },
-    fzf = {}
+    fzf = {},
   },
 
   defaults = {

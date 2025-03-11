@@ -25,13 +25,13 @@ return {
     config = function()
       local cmp = require("cmp")
       local opts = require("configs.cmp")
-      
+
       -- Main completion
       cmp.setup(opts)
-      
+
       -- Completion for search
       cmp.setup.cmdline("/", opts.cmdline.search)
-      
+
       -- Completion for commands
       cmp.setup.cmdline(":", opts.cmdline.command)
     end,

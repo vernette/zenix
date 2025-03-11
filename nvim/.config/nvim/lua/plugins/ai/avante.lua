@@ -12,5 +12,5 @@ return {
   event = "VeryLazy",
   version = false,
   build = "make",
-  opts = require("configs.avante")
+  opts = require("configs.avante"),
 }

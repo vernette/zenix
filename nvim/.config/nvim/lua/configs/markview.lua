@@ -4,5 +4,5 @@ return {
     filetypes = { "markdown", "Avante" },
     ignore_buftypes = { "nofile" },
     icon_provider = "devicons",
-  }
+  },
 }

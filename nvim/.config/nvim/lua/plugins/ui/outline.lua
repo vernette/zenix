@@ -4,5 +4,5 @@ return {
     "Outline",
     "OutlineOpen",
   },
-  opts = require("configs.outline")
+  opts = require("configs.outline"),
 }

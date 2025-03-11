@@ -2,5 +2,5 @@ return {
   "folke/which-key.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   event = "VeryLazy",
-  opts = require("configs.which-key")
+  opts = require("configs.which-key"),
 }
