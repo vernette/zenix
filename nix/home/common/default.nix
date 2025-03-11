@@ -40,10 +40,9 @@
       nekoray
       wlogout
       jq
-      statix
-      alejandra
       stow
       gnumake
+      cargo
     ];
 
     stateVersion = "24.11";
