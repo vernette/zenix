@@ -10,16 +10,8 @@ return {
       settings = {
         Lua = {
           diagnostics = { globals = { "vim" } },
-          workspace = {
-            library = {
-              vim.fn.expand("$VIMRUNTIME/lua"),
-              vim.fn.stdpath("config") .. "/lua",
-            },
-            checkThirdParty = false,
-          },
-          telemetry = {
-            enable = false,
-          },
+          telemetry = { enable = false },
+          format = { enable = false },
         },
       },
     },
@@ -28,6 +20,7 @@ return {
       on_attach = function(client, bufnr)
         vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
       end,
+
       settings = {
         basedpyright = {
           disableTaggedHints = true,
