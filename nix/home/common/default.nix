@@ -43,6 +43,7 @@
       stow
       gnumake
       cargo
+      statix
     ];
 
     stateVersion = "24.11";
