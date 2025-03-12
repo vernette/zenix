@@ -7,7 +7,7 @@ return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     dependencies = { "williamboman/mason-lspconfig.nvim" },
-    event = "VeryLazy",
+    lazy = false,
     opts = require("configs.mason-tool-installer"),
   },
 }
