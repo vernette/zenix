@@ -1,30 +1,24 @@
 return {
   ensure_installed = {
-    -- Lua
-    "lua_ls",
-    "stylua",
+    -- LSP
+    "lua_ls", -- Lua
+    "basedpyright", -- Python
+    "bashls", -- Bash
+    "dockerls", -- Dockerfile
+    "nil_ls", -- Nix
 
-    -- Python
-    "basedpyright",
-    "ruff",
+    -- Formatters
+    "stylua", -- Lua
+    "ruff", -- Python
+    "shfmt", -- Shell
+    "alejandra", -- Nix
+    "prettierd", -- CSS, HTML, JSON, JavaScript, Markdown, YAML, etc
 
-    -- Shell
-    "bashls",
-    "shellcheck",
-    "shfmt",
-
-    -- Dockerfile LSP
-    "dockerls",
-
-    -- Nix
-    "nil_ls",
-    "alejandra",
-
-    -- JSON && YAML linters
-    "hadolint",
-    "biome",
-
-    -- JavaScript, HTML, CSS, Markdown, JSON and YAML formatters
-    "prettierd",
+    -- Linters
+    "selene", -- Lua
+    "shellcheck", -- Shell
+    "hadolint", -- Dockerfile
+    "jsonlint", -- JSON
+    "yamllint", -- YAML
   },
 }

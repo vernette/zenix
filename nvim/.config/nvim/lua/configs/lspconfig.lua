@@ -9,7 +9,7 @@ return {
     lua_ls = {
       settings = {
         Lua = {
-          diagnostics = { globals = { "vim" } },
+          diagnostics = { enable = false },
           telemetry = { enable = false },
           format = { enable = false },
         },
@@ -23,20 +23,20 @@ return {
 
       settings = {
         basedpyright = {
-          disableTaggedHints = true,
-          disableOrganizeImports = true,
-        },
-
-        python = {
-          analysis = {
-            -- Ignore all files for analysis to exclusively use Ruff for linting
-            ignore = { "*" },
-          },
+          analysis = { ignore = { "*" } },
         },
       },
     },
 
-    ruff = {}, -- For linting and code actions, formatter is configured in configs/conform.lua
+    ruff = {
+      init_options = {
+        settings = {
+          lint = { enable = true },
+          format = { enable = false },
+        },
+      },
+    }, -- For linting and code actions, formatter is configured in configs/conform.lua
+
     bashls = {},
     dockerls = {},
     nil_ls = {},
