@@ -1,27 +1,24 @@
 return {
   view = {
     side = "left",
-    signcolumn = "no",
-    preserve_window_proportions = false,
+    width = {
+      min = 40,
+      max = 50,
+      padding = 10,
+    },
   },
 
   renderer = {
-    group_empty = false,
-    indent_width = 1,
+    highlight_git = "name",
+    highlight_opened_files = "name",
+    root_folder_label = ":t",
 
     indent_markers = {
       enable = true,
       inline_arrows = false,
     },
 
-    -- icons = {
-    --   glyphs = {
-    --     git = {
-    --       unstaged = "",
-    --       untracked = "",
-    --     },
-    --   },
-    -- },
+    icons = { git_placement = "after" },
   },
 
   actions = { open_file = { resize_window = false } },
