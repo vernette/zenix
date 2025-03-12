@@ -70,3 +70,7 @@ map("n", "<leader>ps", ":Outline<CR>", { desc = "Toggle Outline" })
 -- Markdown
 map("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
 map("n", "<leader>mr", ":Markview toggle<CR>", { desc = "Toggle Markdown Rendering" })
+
+-- Gitsigns
+map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
+map("n", "<leader>glb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle Current Line Blame" })

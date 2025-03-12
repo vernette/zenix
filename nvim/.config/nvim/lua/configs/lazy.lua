@@ -9,6 +9,7 @@ return {
     { import = "plugins.ai" },
     { import = "plugins.markdown" },
     { import = "plugins.completions" },
+    { import = "plugins.git" },
   },
 
   install = { colorscheme = { "tokyonight" } },
