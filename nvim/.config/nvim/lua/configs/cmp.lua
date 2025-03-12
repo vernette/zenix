@@ -39,11 +39,15 @@ return {
 
   sources = require("cmp").config.sources({
     {
-      name = "luasnip",
-      priority = 850,
+      name = "nvim_lsp",
+      priority = 1000,
     },
     {
       name = "buffer",
+      priority = 850,
+    },
+    {
+      name = "luasnip",
       priority = 750,
     },
     {
