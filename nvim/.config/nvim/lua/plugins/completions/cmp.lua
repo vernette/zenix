@@ -21,7 +21,7 @@ return {
       { "SergioRibera/cmp-dotenv" },
       { "hrsh7th/cmp-nvim-lsp" },
     },
-    event = "BufReadPost",
+    event = { "InsertEnter", "CmdlineEnter" },
     config = function()
       local cmp = require("cmp")
       local opts = require("configs.cmp")
