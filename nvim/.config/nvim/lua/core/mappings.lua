@@ -72,5 +72,9 @@ map("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown P
 map("n", "<leader>mr", ":Markview toggle<CR>", { desc = "Toggle Markdown Rendering" })
 
 -- Gitsigns
-map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
+map("n", "<leader>ghp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
 map("n", "<leader>glb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle Current Line Blame" })
+
+-- Diffview
+map("n", "<leader>gdo", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
+map("n", "<leader>gdc", ":DiffviewClose<CR>", { desc = "Close Diffview" })
