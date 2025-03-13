@@ -18,6 +18,7 @@ return {
       "mason",
       "notify",
       "toggleterm",
+      "NvimTree",
     },
   },
 }
