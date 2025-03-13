@@ -24,11 +24,6 @@ return {
     end,
   },
 
-  window = {
-    completion = require("cmp").config.window.bordered(),
-    documentation = require("cmp").config.window.bordered(),
-  },
-
   mapping = require("cmp").mapping.preset.insert({
     ["<C-b>"] = require("cmp").mapping.scroll_docs(-4),
     ["<C-f>"] = require("cmp").mapping.scroll_docs(4),
@@ -37,6 +32,7 @@ return {
     ["<CR>"] = require("cmp").mapping.confirm({ select = true }),
   }),
 
+  -- TODO: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
   sources = require("cmp").config.sources({
     {
       name = "nvim_lsp",

@@ -15,7 +15,6 @@ return {
   install = { colorscheme = { "tokyonight" } },
 
   ui = {
-    border = "rounded",
     icons = {
       ft = "",
       lazy = "󰂠 ",
