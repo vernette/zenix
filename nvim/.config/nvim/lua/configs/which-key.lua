@@ -1,1 +1,4 @@
-return { win = { border = "rounded" } }
+return {
+  -- TODO: Customize UI
+  win = { border = "rounded" },
+}
