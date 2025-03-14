@@ -94,3 +94,8 @@ map("n", "<leader>gdc", ":DiffviewClose<CR>", { desc = "Close Diffview" })
 
 -- AICommit
 map("n", "<leader>ac", ":AICommit<CR>", { desc = "Generate Commit Message for Staged Files" })
+
+-- mini.diff
+map("n", "<leader>gmd", function()
+  require("mini.diff").toggle_overlay()
+end, { desc = "Toggle mini.diff Overlay" })
