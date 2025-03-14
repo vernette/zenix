@@ -89,3 +89,6 @@ map("n", "<leader>gac", ":Gwrite<CR>", { desc = "Git Add Current File" })
 -- Diffview
 map("n", "<leader>gdo", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
 map("n", "<leader>gdc", ":DiffviewClose<CR>", { desc = "Close Diffview" })
+
+-- AICommit
+map("n", "<leader>ac", ":AICommit<CR>", { desc = "Generate Commit Message for Staged Files" })
