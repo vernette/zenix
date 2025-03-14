@@ -2,7 +2,7 @@ return {
   {
     "williamboman/mason.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = require("configs.mason"),
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
