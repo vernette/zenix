@@ -31,11 +31,33 @@ return {
     ruff = {
       init_options = {
         settings = {
-          lint = { enable = true },
-          format = { enable = false },
+          lint = {
+            enable = true,
+            select = {
+              "E",
+              "F",
+              "UP",
+              "N",
+              "I",
+              "ASYNC",
+              "S",
+              "PTH",
+              "B",
+              "W",
+              "Q",
+              "C",
+              -- "D", -- Missing docstring in public module
+              "R",
+              "G",
+              "PT",
+            },
+            ignore = { "Q000" }, -- Ignore preference for double quotes
+          },
+          lineLength = 79,
+          respectGitignore = true,
         },
       },
-    }, -- For linting and code actions, formatter is configured in configs/conform.lua
+    }, -- For linting and code actions, formatter is configured in configs/conform.lua,
 
     bashls = {},
     dockerls = {},
