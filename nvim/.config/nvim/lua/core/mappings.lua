@@ -78,7 +78,10 @@ map("n", "<leader>mr", ":Markview toggle<CR>", { desc = "Toggle Markdown Renderi
 
 -- Gitsigns
 map("n", "<leader>ghp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
-map("n", "<leader>glb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle Current Line Blame" })
+map("n", "<leader>glb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle Current Line Git Blame" })
+map("n", "<leader>gb", function()
+  require("gitsigns").blame_line({ full = true })
+end, { desc = "Show Git Blame" })
 
 -- Diffview
 map("n", "<leader>gdo", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
