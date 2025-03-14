@@ -36,7 +36,6 @@ return {
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
 
-  -- TODO: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
   sources = cmp.config.sources({
     {
       name = "buffer",
