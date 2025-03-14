@@ -8,8 +8,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Buffers navigation
-map("n", "[b", ":bnext<CR>", { desc = "Previous Buffer" })
-map("n", "]b", ":bprevious<CR>", { desc = "Next Buffer" })
+map("n", "]b", ":bnext<CR>", { desc = "Previous Buffer" })
+map("n", "[b", ":bprevious<CR>", { desc = "Next Buffer" })
 
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", { desc = "Move left" })
