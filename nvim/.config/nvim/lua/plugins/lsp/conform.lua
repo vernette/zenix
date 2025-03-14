@@ -1,5 +1,5 @@
 return {
   "stevearc/conform.nvim",
-  event = { "BufWritePre" },
+  event = "VeryLazy",
   opts = require("configs.conform"),
 }

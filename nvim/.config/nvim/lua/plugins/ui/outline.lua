@@ -1,8 +1,5 @@
 return {
   "hedyhli/outline.nvim",
-  cmd = {
-    "Outline",
-    "OutlineOpen",
-  },
+  cmd = { "Outline", "OutlineOpen" },
   opts = require("configs.outline"),
 }

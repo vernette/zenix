@@ -1,5 +1,5 @@
 return {
   "rachartier/tiny-glimmer.nvim",
-  event = "BufEnter",
+  event = "TextYankPost",
   opts = {},
 }

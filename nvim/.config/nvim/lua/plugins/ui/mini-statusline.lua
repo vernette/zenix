@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.statusline",
   version = false,
-  event = "BufEnter",
+  event = "VeryLazy",
   opts = {},
 }

@@ -1,7 +1,7 @@
 return {
   "echasnovski/mini.indentscope",
   version = false,
-  event = "BufReadPost",
+  event = "VeryLazy",
   init = function()
     vim.api.nvim_create_autocmd("FileType", {
       desc = "Disable indentscope for certain filetypes",
