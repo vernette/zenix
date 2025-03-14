@@ -31,6 +31,7 @@ return {
     ruff = {
       init_options = {
         settings = {
+          format = { enable = false },
           lint = {
             enable = true,
             select = {
@@ -46,7 +47,7 @@ return {
               "W",
               "Q",
               "C",
-              -- "D", -- Missing docstring in public module
+              "D",
               "R",
               "G",
               "PT",
