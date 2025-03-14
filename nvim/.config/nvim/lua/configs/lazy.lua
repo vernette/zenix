@@ -58,9 +58,5 @@ return {
   },
 
   change_detection = { enabled = false },
-
-  checker = {
-    enabled = true,
-    notify = false,
-  },
+  checker = { enabled = false },
 }
