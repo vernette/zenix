@@ -53,6 +53,7 @@ map("n", "<leader>fcb", ":Telescope current_buffer_fuzzy_find<CR>", { desc = "Se
 map("n", "<leader>fgb", ":Telescope git_branches<CR>", { desc = "Show Git Branches" })
 map("n", "<leader>fgc", ":Telescope git_commits<CR>", { desc = "Show Git Commits" })
 map("n", "<leader>fgs", ":Telescope git_status<CR>", { desc = "Show Git Status" })
+map("n", "<leader>flr", ":Telescope lsp_references<CR>", { desc = "Show LSP References" })
 map("n", "<leader>fn", ":Telescope notify<CR>", { desc = "Show Notifications" })
 map("n", "<leader>ft", ":TodoTelescope<CR>", { desc = "Show TODOs" })
 map("n", "<leader>fi", ":Telescope import<CR>", { desc = "Show Imports" })
