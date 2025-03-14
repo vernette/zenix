@@ -8,11 +8,17 @@
 
   networking.hostName = "arcadia";
 
-  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+  boot = {
+    kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+    extraModulePackages = with config.boot.kernelPackages; [
+      rtl88xxau-aircrack
+    ];
+  };
 
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware = {
+    enableAllFirmware = true;
     graphics.enable = true;
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -21,6 +27,7 @@
       nvidiaSettings = true;
       powerManagement.enable = true;
     };
+    bluetooth.enable = true;
   };
 
   virtualisation.docker.enable = true;
