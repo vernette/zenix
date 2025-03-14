@@ -17,8 +17,13 @@ return {
 
   highlight = {
     enable = true,
-    disable = function(lang, bufnr) -- Disable in large JSON buffers
-      return lang == "json" and vim.api.nvim_buf_line_count(bufnr) > 50000
+    disable = function(lang, bufnr)
+      local filename = vim.api.nvim_buf_get_name(bufnr)
+      if filename ~= "" then
+        local file_size = vim.fn.getfsize(filename)
+        local size_limit = 2 * 1024 * 1024 -- 2MB
+        return file_size > size_limit
+      end
     end,
   },
 
