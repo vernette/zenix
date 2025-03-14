@@ -1,4 +1,5 @@
 return {
   "Exafunction/codeium.vim",
-  event = "BufReadPre",
+  event = "InsertEnter",
+  build = ":Codeium Auth",
 }
