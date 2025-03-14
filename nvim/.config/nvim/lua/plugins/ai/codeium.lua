@@ -1,5 +1,5 @@
 return {
-  "Exafunction/codeium.vim",
-  event = "InsertEnter",
-  build = ":Codeium Auth",
+  "Exafunction/codeium.nvim",
+  event = "VeryLazy",
+  opts = require("configs.codeium"),
 }
