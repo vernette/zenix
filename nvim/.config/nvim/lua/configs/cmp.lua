@@ -5,6 +5,7 @@ return {
       return lspkind.cmp_format({
         mode = "symbol_text",
         menu = {
+          nvim_lsp = "[LSP]",
           buffer = "[Buffer]",
           path = "[Path]",
           luasnip = "[Snippet]",
