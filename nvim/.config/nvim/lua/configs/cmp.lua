@@ -1,3 +1,5 @@
+local cmp = require("cmp")
+
 return {
   formatting = {
     format = function(entry, vim_item)
@@ -7,14 +9,15 @@ return {
         menu = {
           nvim_lsp = "[LSP]",
           buffer = "[Buffer]",
-          path = "[Path]",
           luasnip = "[Snippet]",
+          path = "[Path]",
+          codeium = "[Codeium]",
           cmdline = "[Cmdline]",
           dotenv = "[Env]",
-          codeium = "[Codeium]",
         },
         maxwidth = 50,
         ellipsis_char = "...",
+        symbol_map = { Codeium = "" },
       })(entry, vim_item)
     end,
   },
@@ -25,56 +28,56 @@ return {
     end,
   },
 
-  mapping = require("cmp").mapping.preset.insert({
-    ["<C-b>"] = require("cmp").mapping.scroll_docs(-4),
-    ["<C-f>"] = require("cmp").mapping.scroll_docs(4),
-    ["<C-Space>"] = require("cmp").mapping.complete(),
-    ["<C-e>"] = require("cmp").mapping.abort(),
-    ["<CR>"] = require("cmp").mapping.confirm({ select = true }),
+  mapping = cmp.mapping.preset.insert({
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
 
   -- TODO: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
-  sources = require("cmp").config.sources({
+  sources = cmp.config.sources({
     {
-      name = "nvim_lsp",
+      name = "buffer",
       priority = 1000,
     },
     {
-      name = "buffer",
-      priority = 850,
+      name = "nvim_lsp",
+      priority = 900,
     },
     {
       name = "luasnip",
-      priority = 750,
+      priority = 800,
     },
     {
       name = "path",
-      priority = 650,
+      priority = 700,
     },
     {
       name = "codeium",
-      priority = 550,
+      priority = 600,
     },
     {
       name = "cmdline",
-      priority = 450,
+      priority = 500,
     },
     {
       name = "dotenv",
-      priority = 350,
+      priority = 400,
     },
   }),
 
   cmdline = {
     search = {
-      mapping = require("cmp").mapping.preset.cmdline(),
+      mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = "buffer" },
       },
     },
     command = {
-      mapping = require("cmp").mapping.preset.cmdline(),
-      sources = require("cmp").config.sources({ { name = "path" } }, {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({ { name = "path" } }, {
         {
           name = "cmdline",
           option = {
