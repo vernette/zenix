@@ -1,5 +1,12 @@
 return {
   -- Mostly from https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/telescope.lua
+  pickers = {
+    colorscheme = {
+      enable_preview = true,
+      ignore_builtins = true,
+    },
+  },
+
   defaults = {
     border = false,
     prompt_prefix = "   ",
