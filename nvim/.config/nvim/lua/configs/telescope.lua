@@ -12,7 +12,7 @@ return {
     prompt_prefix = "   ",
     selection_caret = " 󱞩 ",
     entry_prefix = " ",
-    path_display = { "smart" },
+    path_display = { "filename_first" },
     sorting_strategy = "ascending",
 
     layout_config = {
