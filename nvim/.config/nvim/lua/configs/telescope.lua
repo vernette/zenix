@@ -22,6 +22,7 @@ return {
   },
 
   defaults = {
+    border = false,
     layout_strategy = "horizontal",
     prompt_prefix = " ",
     selection_caret = "󱞩 ",
