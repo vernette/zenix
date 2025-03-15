@@ -2,7 +2,6 @@ return {
   view = {
     side = "left",
     width = {
-      min = 40,
       max = 50,
       padding = 10,
     },
