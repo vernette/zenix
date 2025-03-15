@@ -1,32 +1,21 @@
-local default_preview_cutoff = 0
-
 return {
-  pickers = {
-    colorscheme = {
-      enable_preview = true,
-      ignore_builtins = true,
-    },
-
-    current_buffer_fuzzy_find = { sorting_strategy = "ascending" },
-
-    buffers = {
-      theme = "dropdown",
-      previewer = false,
-    },
-  },
-
-  extensions = {
-    ["ui-select"] = { require("telescope.themes").get_cursor({}) },
-    import = { insert_at_top = true },
-    fzf = {},
-  },
-
+  -- Mostly from https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/telescope.lua
   defaults = {
     border = false,
-    layout_strategy = "horizontal",
-    prompt_prefix = " ",
-    selection_caret = "󱞩 ",
+    prompt_prefix = "   ",
+    selection_caret = " 󱞩 ",
+    entry_prefix = " ",
     path_display = { "smart" },
+    sorting_strategy = "ascending",
+
+    layout_config = {
+      horizontal = {
+        prompt_position = "top",
+        preview_width = 0.55,
+      },
+      width = 0.87,
+      height = 0.80,
+    },
 
     file_ignore_patterns = {
       "venv",
@@ -34,10 +23,11 @@ return {
       "__pycache__",
       "node_modules",
     },
+  },
 
-    layout_config = {
-      vertical = { preview_cutoff = default_preview_cutoff },
-      horizontal = { preview_cutoff = default_preview_cutoff },
-    },
+  extensions = {
+    ["ui-select"] = { require("telescope.themes").get_cursor({}) },
+    import = { insert_at_top = true },
+    fzf = {},
   },
 }
