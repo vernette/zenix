@@ -98,3 +98,8 @@ map("n", "<leader>ac", ":AICommit<CR>", { desc = "Generate Commit Message for St
 map("n", "<leader>gmd", function()
   require("mini.diff").toggle_overlay()
 end, { desc = "Toggle mini.diff Overlay" })
+
+-- Compiler
+map("n", "<leader>co", ":CompilerOpen<CR>", { desc = "Open Compiler Menu" })
+map("n", "<leader>cr", ":CompilerRedo<CR>", { desc = "Re-run Compiler Last Selected Option" })
+map("n", "<leader>ct", ":CompilerToggleResults<CR>", { desc = "Toggle Compiler Results" })
