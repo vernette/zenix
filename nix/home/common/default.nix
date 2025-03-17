@@ -44,7 +44,6 @@
       gnumake
       cargo
       statix
-      overskride
     ];
 
     stateVersion = "24.11";

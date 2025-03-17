@@ -8,5 +8,6 @@
     unstable.ayugram-desktop
     unstable.code-cursor
     obs-studio
+    overskride
   ];
 }

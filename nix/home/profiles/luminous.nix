@@ -9,5 +9,6 @@
     obs-studio
     powertop
     upower
+    overskride
   ];
 }
