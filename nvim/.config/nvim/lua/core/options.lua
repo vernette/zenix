@@ -35,12 +35,10 @@ opt.splitbelow = true
 opt.splitright = true
 opt.timeoutlen = 400
 opt.undofile = true
+opt.swapfile = false
 
 -- Disable nvim intro
 opt.shortmess:append("sI")
-
--- Interval for writing swap file to disk, also used by gitsigns
-opt.updatetime = 250
 
 -- Uncomment the following line to set the font for Neovide
 -- opt.guifont = "JetBrainsMono Nerd Font"
