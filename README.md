@@ -1,5 +1,8 @@
 # zenix
 
+> [!CAUTION]
+> WIP
+
 ## What's in the name?
 
 **zenix** = zen + nix
