@@ -31,7 +31,7 @@ map("n", "<C-\\>", ":ToggleTerm<CR>", { desc = "Toggle Terminal" })
 map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
 
 -- Flash
-map({ "n", "x", "o" }, "s", function()
+map({ "n", "x", "o" }, "<leader>s", function()
   require("flash").jump()
 end, { desc = "Flash" })
 
