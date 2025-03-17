@@ -2,5 +2,5 @@ return {
   "echasnovski/mini.pairs",
   version = false,
   event = "VeryLazy",
-  opts = {},
+  opts = require("configs.mini-pairs"),
 }
