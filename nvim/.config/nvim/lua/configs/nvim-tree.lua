@@ -1,3 +1,9 @@
+local function create_root_folder_label(path)
+  local parent = vim.fn.fnamemodify(path, ":h:t")
+  local current = vim.fn.fnamemodify(path, ":t")
+  return parent .. "/" .. current
+end
+
 return {
   -- Mostly from https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/nvimtree.lua
   filters = { dotfiles = false },
@@ -20,7 +26,7 @@ return {
   },
 
   renderer = {
-    root_folder_label = false,
+    root_folder_label = create_root_folder_label,
     highlight_git = "name",
     highlight_opened_files = "name",
 
