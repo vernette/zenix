@@ -10,7 +10,6 @@ return {
       settings = {
         Lua = {
           diagnostics = { enable = false },
-          telemetry = { enable = false },
           format = { enable = false },
         },
       },
