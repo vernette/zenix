@@ -27,6 +27,7 @@ opt.showmode = false
 opt.signcolumn = "yes"
 
 -- Etc
+opt.fileencoding = "utf-8"
 opt.laststatus = 3
 opt.clipboard = "unnamedplus"
 opt.fillchars = { eob = " " }
@@ -44,9 +45,9 @@ opt.shortmess:append("sI")
 -- Uncomment the following line to set the font for Neovide
 -- opt.guifont = "JetBrainsMono Nerd Font"
 
--- Recognize files with the .http extension as HTTP files
 vim.filetype.add({
   extension = {
+    -- Recognize files with the .http extension as HTTP files
     ["http"] = "http",
   },
   pattern = {
