@@ -14,7 +14,7 @@ opt.numberwidth = 2
 opt.ruler = false
 
 -- Scrolloff
-opt.so = 30
+opt.scrolloff = 30
 opt.sidescrolloff = 50
 
 -- Search
