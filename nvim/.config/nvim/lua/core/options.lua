@@ -25,6 +25,7 @@ opt.smartcase = true
 opt.cursorline = true
 opt.showmode = false
 opt.signcolumn = "yes"
+opt.inccommand = "split"
 
 -- Etc
 opt.fileencoding = "utf-8"
