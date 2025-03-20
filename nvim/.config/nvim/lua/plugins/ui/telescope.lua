@@ -6,7 +6,7 @@ return {
     { "piersolenski/telescope-import.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
-  event = "VeryLazy",
+  cmd = "Telescope",
   config = function()
     local telescope = require("telescope")
     telescope.setup(require("configs.telescope"))

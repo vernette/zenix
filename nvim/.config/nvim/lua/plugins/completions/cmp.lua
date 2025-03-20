@@ -11,17 +11,17 @@ return {
       require("luasnip.loaders.from_vscode").lazy_load()
     end,
   },
+  { "hrsh7th/cmp-nvim-lsp", event = "LspAttach" },
+  { "hrsh7th/cmp-cmdline", event = "CmdlineEnter" },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      { "onsails/lspkind.nvim" },
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-buffer" },
-      { "hrsh7th/cmp-cmdline" },
       { "SergioRibera/cmp-dotenv" },
-      { "hrsh7th/cmp-nvim-lsp" },
+      { "onsails/lspkind.nvim" },
     },
-    event = { "InsertEnter", "CmdlineEnter" },
+    event = "InsertEnter",
     config = function()
       local cmp = require("cmp")
       local opts = require("configs.cmp")

@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.pairs",
   version = false,
-  event = "VeryLazy",
+  event = "InsertEnter",
   opts = require("configs.mini-pairs"),
 }
