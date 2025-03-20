@@ -1,6 +1,6 @@
 return {
   "folke/noice.nvim",
   dependencies = { "MunifTanjim/nui.nvim" },
-  event = "CmdlineEnter",
+  event = "VeryLazy",
   opts = require("configs.noice"),
 }
