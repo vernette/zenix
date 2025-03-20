@@ -12,16 +12,16 @@ return {
     end,
   },
   { "hrsh7th/cmp-nvim-lsp", event = "LspAttach" },
-  { "hrsh7th/cmp-cmdline", event = "CmdlineEnter" },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-cmdline" },
       { "SergioRibera/cmp-dotenv" },
       { "onsails/lspkind.nvim" },
     },
-    event = "InsertEnter",
+    event = { "InsertEnter", "CmdlineEnter" },
     config = function()
       local cmp = require("cmp")
       local opts = require("configs.cmp")

@@ -1,4 +1,4 @@
 return {
   "famiu/bufdelete.nvim",
-  event = "BufReadPre",
+  event = "BufAdd",
 }
