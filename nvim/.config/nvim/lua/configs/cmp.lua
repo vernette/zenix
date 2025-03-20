@@ -1,25 +1,24 @@
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 return {
   formatting = {
-    format = function(entry, vim_item)
-      local lspkind = require("lspkind")
-      return lspkind.cmp_format({
-        mode = "symbol_text",
-        menu = {
-          nvim_lsp = "[LSP]",
-          buffer = "[Buffer]",
-          luasnip = "[Snippet]",
-          path = "[Path]",
-          codeium = "[Codeium]",
-          cmdline = "[Cmdline]",
-          dotenv = "[Env]",
-        },
-        maxwidth = 50,
-        ellipsis_char = "...",
-        symbol_map = { Codeium = "" },
-      })(entry, vim_item)
-    end,
+    fields = { "kind", "abbr", "menu" },
+    format = lspkind.cmp_format({
+      mode = "symbol_text",
+      maxwidth = 50,
+      ellipsis_char = "...",
+      symbol_map = { Codeium = "󰭻" },
+      menu = {
+        nvim_lsp = "[LSP]",
+        buffer = "[Buffer]",
+        luasnip = "[Snippet]",
+        path = "[Path]",
+        codeium = "[Codeium]",
+        cmdline = "[Cmdline]",
+        dotenv = "[Env]",
+      },
+    }),
   },
 
   snippet = {
@@ -38,11 +37,11 @@ return {
 
   sources = cmp.config.sources({
     {
-      name = "buffer",
+      name = "nvim_lsp",
       priority = 1000,
     },
     {
-      name = "nvim_lsp",
+      name = "buffer",
       priority = 900,
     },
     {
