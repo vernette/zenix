@@ -20,6 +20,7 @@ return {
     "jsonc",
     "yaml",
     "hyprlang",
+    "gitcommit",
   },
 
   indent = {
