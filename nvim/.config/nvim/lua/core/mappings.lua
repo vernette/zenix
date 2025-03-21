@@ -51,6 +51,7 @@ map("n", "<leader>fo", ":Telescope oldfiles<CR>", { desc = "Show Recent Files" }
 map("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Show Buffers" })
 map("n", "<leader>fk", ":Telescope keymaps<CR>", { desc = "Show Keymaps" })
 map("n", "<leader>fcb", ":Telescope current_buffer_fuzzy_find<CR>", { desc = "Search in Current Buffer" })
+map("n", "<leader>fgf", ":Telescope git_files<CR>", { desc = "Show Git Files" })
 map("n", "<leader>fgb", ":Telescope git_branches<CR>", { desc = "Show Git Branches" })
 map("n", "<leader>fgc", ":Telescope git_commits<CR>", { desc = "Show Git Commits" })
 map("n", "<leader>fgs", ":Telescope git_status<CR>", { desc = "Show Git Status" })
