@@ -58,10 +58,10 @@ map("n", "<leader>ft", ":TodoTelescope<CR>", { desc = "Show TODOs" })
 map("n", "<leader>fi", ":Telescope import<CR>", { desc = "Show Imports" })
 
 -- LSP
-map("n", "<leader>ld", vim.diagnostic.setloclist, { desc = "List Diagnostics" })
-map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
-map("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
-map("n", "<leader>lca", vim.lsp.buf.code_action, { desc = "Code Actions" })
+map("n", "<leader>ld", vim.diagnostic.setloclist, { desc = "LSP List Diagnostics" })
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "LSP Previous Diagnostic" })
+map("n", "]d", vim.diagnostic.goto_next, { desc = "LSP Next Diagnostic" })
+map("n", "<leader>lca", vim.lsp.buf.code_action, { desc = "LSP Code Actions" })
 map("n", "<leader>lr", vim.lsp.buf.rename, { desc = "LSP Rename" })
 
 -- Conform
