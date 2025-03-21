@@ -34,6 +34,7 @@ return {
     "requirements",
     "ssh_config",
     "toml",
+    "nginx",
   },
 
   indent = {
