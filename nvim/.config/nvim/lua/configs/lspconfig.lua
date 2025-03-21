@@ -62,5 +62,7 @@ return {
     bashls = {},
     dockerls = {},
     nil_ls = {},
+    yamlls = {},
+    jsonls = {},
   },
 }

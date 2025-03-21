@@ -6,6 +6,8 @@ return {
     "bashls", -- Bash
     "dockerls", -- Dockerfile
     "nil_ls", -- Nix
+    "json-lsp", -- JSON
+    "yaml-language-server", -- YAML
 
     -- Formatters
     "stylua", -- Lua
