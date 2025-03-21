@@ -25,8 +25,6 @@ return {
 
     file_ignore_patterns = {
       ".cargo",
-      ".librewolf",
-      ".git",
       ".venv",
       "venv",
       "__pycache__",
