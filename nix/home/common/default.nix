@@ -44,6 +44,7 @@
       gnumake
       cargo
       statix
+      file
     ];
 
     stateVersion = "24.11";
