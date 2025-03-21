@@ -21,6 +21,8 @@ return {
     "yaml",
     "hyprlang",
     "gitcommit",
+    "dockerfile",
+    "nix",
   },
 
   indent = {
