@@ -40,9 +40,6 @@ map("n", "<A-w>", function()
   require("bufdelete").bufdelete(0, true)
 end, { desc = "Delete Current Buffer" })
 
--- IncRename
-map("n", "<leader>ir", ":IncRename ", { desc = "Incremental Rename" })
-
 -- Telescope
 map("n", "<leader>th", ":Telescope colorscheme<CR>", { desc = "Choose Colorscheme" })
 map("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find Files" })
@@ -65,6 +62,7 @@ map("n", "<leader>ld", vim.diagnostic.setloclist, { desc = "List Diagnostics" })
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
 map("n", "<leader>lca", vim.lsp.buf.code_action, { desc = "Code Actions" })
+map("n", "<leader>lr", vim.lsp.buf.rename, { desc = "LSP Rename" })
 
 -- Conform
 map("n", "<leader>fm", function()
