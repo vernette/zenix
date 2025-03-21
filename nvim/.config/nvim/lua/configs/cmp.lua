@@ -4,11 +4,13 @@ local lspkind = require("lspkind")
 return {
   formatting = {
     fields = { "kind", "abbr", "menu" },
+
     format = lspkind.cmp_format({
       mode = "symbol_text",
       maxwidth = 50,
       ellipsis_char = "...",
       symbol_map = { Codeium = "󰭻" },
+
       menu = {
         nvim_lsp = "[LSP]",
         buffer = "[Buffer]",
@@ -69,10 +71,9 @@ return {
   cmdline = {
     search = {
       mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = "buffer" },
-      },
+      sources = { { name = "buffer" } },
     },
+
     command = {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({ { name = "path" } }, {
