@@ -8,7 +8,6 @@ return {
   },
 
   defaults = {
-    border = false,
     prompt_prefix = "   ",
     selection_caret = " 󱞩 ",
     entry_prefix = " ",
@@ -25,8 +24,11 @@ return {
     },
 
     file_ignore_patterns = {
-      "venv",
+      ".cargo",
+      ".librewolf",
+      ".git",
       ".venv",
+      "venv",
       "__pycache__",
       "node_modules",
     },
