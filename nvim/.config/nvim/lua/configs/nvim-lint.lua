@@ -7,5 +7,7 @@ return {
     dockerfile = { "hadolint" },
     bash = { "shellcheck" },
     nix = { "statix" },
+    sql = { "sqlfluff" },
+    html = { "htmlhint" },
   },
 }

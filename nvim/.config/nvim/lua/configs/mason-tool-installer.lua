@@ -23,5 +23,7 @@ return {
     "jsonlint", -- JSON
     "yamllint", -- YAML
     -- statix for Nix, but it's not in Mason. Installed system-wide
+    "sqlfluff", -- SQL
+    "htmlhint", -- HTML
   },
 }
