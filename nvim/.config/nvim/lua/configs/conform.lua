@@ -35,9 +35,10 @@ return {
     },
     shfmt = {
       prepend_args = {
-        "-i",
+        "--indent",
         "2",
-        "-ci",
+        "--case-indent",
+        "--space-redirects",
       },
     },
   },
