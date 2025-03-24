@@ -25,7 +25,7 @@ local function with_codespell(linters)
 end
 
 local base_linters_by_ft = {
-  python = {}, -- ruff is configured in configs/lspconfig.lua, so codespell is used for grammar checking
+  python = { "mypy" }, -- ruff linter is configured in configs/lspconfig.lua
   lua = { "selene" },
   json = { "jsonlint" },
   yaml = { "yamllint" },

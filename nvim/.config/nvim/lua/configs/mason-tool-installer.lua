@@ -17,6 +17,7 @@ return {
     "prettierd", -- CSS, HTML, JSON, JavaScript, Markdown, YAML, etc
 
     -- Linters
+    "mypy", -- Python
     "selene", -- Lua
     "shellcheck", -- Shell
     "hadolint", -- Dockerfile
