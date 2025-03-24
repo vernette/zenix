@@ -56,8 +56,8 @@ return {
     enable = true,
     disable = is_large_file,
     keymaps = {
-      init_selection = "<C-w>",
-      node_incremental = "<C-w>",
+      init_selection = "<C-s>",
+      node_incremental = "<C-s>",
       scope_incremental = false,
       node_decremental = "<Backspace>",
     },
