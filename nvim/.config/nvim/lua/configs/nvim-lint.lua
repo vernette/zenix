@@ -25,7 +25,7 @@ local function with_codespell(linters)
 end
 
 local base_linters_by_ft = {
-  python = { "mypy" }, -- ruff linter is configured in configs/lspconfig.lua
+  python = { "ruff", "mypy" },
   lua = { "selene" },
   json = { "jsonlint" },
   yaml = { "yamllint" },
@@ -42,5 +42,22 @@ local linters_by_ft = {}
 for lang, linters in pairs(base_linters_by_ft) do
   linters_by_ft[lang] = with_codespell(linters)
 end
+
+local lint = require("lint")
+local ruff = lint.linters.ruff
+ruff.args = {
+  "check",
+  "--output-format",
+  "json",
+  "--select",
+  "E,F,UP,N,I,ASYNC,S,PTH,B,W,Q,C,D,R,G,PT",
+  "--ignore",
+  "Q000",
+  "--line-length",
+  "79",
+  "--respect-gitignore",
+  "--preview",
+  "-"
+}
 
 return { linters_by_ft = linters_by_ft }

@@ -27,38 +27,6 @@ return {
       },
     },
 
-    ruff = {
-      init_options = {
-        settings = {
-          format = { enable = false },
-          lint = {
-            enable = true,
-            select = {
-              "E",
-              "F",
-              "UP",
-              "N",
-              "I",
-              "ASYNC",
-              "S",
-              "PTH",
-              "B",
-              "W",
-              "Q",
-              "C",
-              "D",
-              "R",
-              "G",
-              "PT",
-            },
-            ignore = { "Q000" }, -- Ignore preference for double quotes
-          },
-          lineLength = 79,
-          respectGitignore = true,
-        },
-      },
-    }, -- For linting and code actions, formatter is configured in configs/conform.lua,
-
     bashls = {},
     dockerls = {},
     nil_ls = {},
