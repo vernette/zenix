@@ -27,6 +27,15 @@ return {
       },
     },
 
+    ruff = {
+      init_options = {
+        settings = {
+          format = { enable = false },
+          lint = { enable = false },
+        },
+      },
+    }, -- For code actions, formatter is configured in configs/conform.lua, linter is configured in configs/nvim-lint.lua
+
     bashls = {},
     dockerls = {},
     nil_ls = {},
