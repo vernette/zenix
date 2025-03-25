@@ -12,6 +12,7 @@ return {
       dashboard.button("SPC ff", " " .. " Find Files", ":Telescope find_files<CR>"),
       dashboard.button("SPC fo", " " .. " Recent Files", ":Telescope oldfiles<CR>"),
       dashboard.button("SPC fw", "󰈬 " .. " Find Text", ":Telescope live_grep<CR>"),
+      dashboard.button("SPC ft", " " .. " Find TODOs", ":TodoTelescope<CR>"),
       dashboard.button("e", " " .. " New File", ":ene <BAR> startinsert <CR>"),
       dashboard.button("q", " " .. " Quit Neovim", ":qa<CR>"),
     }
