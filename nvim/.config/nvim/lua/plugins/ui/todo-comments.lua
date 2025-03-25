@@ -1,5 +1,6 @@
 return {
   "folke/todo-comments.nvim",
-  event = "VeryLazy",
+  event = { "BufReadPost", "BufNewFile" },
+  cmd = "TodoTelescope",
   opts = {},
 }
