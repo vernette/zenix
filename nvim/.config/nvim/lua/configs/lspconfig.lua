@@ -15,17 +15,7 @@ return {
       },
     },
 
-    basedpyright = {
-      on_attach = function(client, bufnr)
-        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-      end,
-
-      settings = {
-        basedpyright = {
-          analysis = { ignore = { "*" } },
-        },
-      },
-    },
+    jedi_language_server = {},
 
     ruff = {
       init_options = {
