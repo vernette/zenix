@@ -11,6 +11,7 @@ return {
     css = { "prettierd" },
     markdown = { "prettierd" },
     nix = { "alejandra" },
+    nginx = { "nginxfmt" },
   },
   formatters = {
     ruff_format = {
