@@ -17,6 +17,7 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light Aloxaf/fzf-tab
 zinit light MichaelAquilina/zsh-auto-notify
+zinit light fdellwing/zsh-bat
 
 # Snippets
 zinit snippet OMZP::git
@@ -60,7 +61,6 @@ export AUTO_NOTIFY_TITLE="Hey! '%command' has just finished"
 export AUTO_NOTIFY_BODY="It completed in %elapsed seconds"
 
 # Aliases
-alias cat=batorcat
 alias ls='eza -T --group-directories-first -L 1 --icons always'
 alias v="nvim"
 alias zshconf="$EDITOR ~/.zshrc && source ~/.zshrc"
@@ -107,14 +107,6 @@ ddai() {
 traceroute-mapper() {
   traceroute=$(traceroute -q1 $* | sed ':a;N;$!ba;s/\n/%0A/g')
   xdg-open "https://stefansundin.github.io/traceroute-mapper/?trace=$traceroute"
-}
-
-batorcat() {
-  if command -v bat > /dev/null 2>&1; then
-    bat "$1"
-  else
-    cat "$1"
-  fi
 }
 
 # Run Python virtualenv detection script
