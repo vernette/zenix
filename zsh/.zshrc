@@ -1,3 +1,11 @@
+# Envs
+export EDITOR=nvim
+export MANPAGER="$EDITOR +Man!"
+export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
+export AUTO_NOTIFY_THRESHOLD=20
+export AUTO_NOTIFY_TITLE="Hey! '%command' has just finished"
+export AUTO_NOTIFY_BODY="It completed in %elapsed seconds"
+
 # Print pokemon
 krabby random --no-title
 
@@ -25,7 +33,7 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 
 # Load completions
-# autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 autoload -U select-word-style
@@ -51,14 +59,6 @@ setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_find_no_dups
-
-# Envs
-export EDITOR=nvim
-export MANPAGER="$EDITOR +Man!"
-export PATH=$HOME/.local/bin:$PATH
-export AUTO_NOTIFY_THRESHOLD=20
-export AUTO_NOTIFY_TITLE="Hey! '%command' has just finished"
-export AUTO_NOTIFY_BODY="It completed in %elapsed seconds"
 
 # Aliases
 alias ls='eza -T --group-directories-first -L 1 --icons always'
