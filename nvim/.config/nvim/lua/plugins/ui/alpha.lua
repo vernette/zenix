@@ -4,16 +4,22 @@ return {
   event = "VimEnter",
   opts = function()
     local dashboard = require("alpha.themes.dashboard")
-    -- TODO: Add logo and move config to configs folder
-    -- local logo = [[
-    -- ]]
-    -- dashboard.section.header.val = vim.split(logo, "\n")
+    -- TODO: Move config to configs folder
+    local logo = [[
+ ███████╗███████╗███╗   ██╗██╗   ██╗██╗███╗   ███╗
+ ╚══███╔╝██╔════╝████╗  ██║██║   ██║██║████╗ ████║
+   ███╔╝ █████╗  ██╔██╗ ██║██║   ██║██║██╔████╔██║
+  ███╔╝  ██╔══╝  ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║
+ ███████╗███████╗██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
+ ╚══════╝╚══════╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
+    ]]
+    dashboard.section.header.val = vim.split(logo, "\n")
     dashboard.section.buttons.val = {
       dashboard.button("SPC ff", " " .. " Find Files", ":Telescope find_files<CR>"),
       dashboard.button("SPC fo", " " .. " Recent Files", ":Telescope oldfiles<CR>"),
       dashboard.button("SPC fw", "󰈬 " .. " Find Text", ":Telescope live_grep<CR>"),
       dashboard.button("SPC ft", " " .. " Find TODOs", ":TodoTelescope<CR>"),
-      dashboard.button("e", " " .. " New File", ":ene <BAR> startinsert <CR>"),
+      dashboard.button("e", " " .. " New File", ":ene <BAR> startinsert<CR>"),
       dashboard.button("q", " " .. " Quit Neovim", ":qa<CR>"),
     }
     for _, button in ipairs(dashboard.section.buttons.val) do
