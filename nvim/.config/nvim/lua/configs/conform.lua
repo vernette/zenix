@@ -39,7 +39,6 @@ return {
         "--indent",
         "2",
         "--case-indent",
-        "--space-redirects",
       },
     },
   },
