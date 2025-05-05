@@ -56,6 +56,9 @@ vim.filetype.add({
     [".*/hypr/.*%.conf"] = "hyprlang",
     [".*/hypr/configs/.*%.conf"] = "hyprlang",
   },
+  filename = {
+    ["Caddyfile"] = "caddy",
+  },
 })
 
 -- Add binaries installed by mason.nvim to path
