@@ -11,6 +11,14 @@ return {
       "buffer",
       "snippets",
       "path",
+      "codeium",
+    },
+    providers = {
+      codeium = {
+        name = "Codeium",
+        module = "codeium.blink",
+        async = true,
+      },
     },
   },
   fuzzy = { implementation = "prefer_rust" },
