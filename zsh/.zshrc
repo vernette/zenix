@@ -28,7 +28,6 @@ zinit light MichaelAquilina/zsh-auto-notify
 zinit light fdellwing/zsh-bat
 
 # Snippets
-zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 
@@ -65,6 +64,22 @@ alias ls='eza -T --group-directories-first -L 1 --icons always'
 alias v="nvim"
 alias zshconf="$EDITOR ~/.zshrc && source ~/.zshrc"
 alias nixconf="sudoedit /etc/nixos/configuration.nix"
+
+alias gc="git clone"
+alias gcm="git commit"
+alias gcl="git clean"
+alias gs="git status"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias ga="git add"
+alias gap="git add --patch"
+alias gr="git restore"
+alias grs="git reset"
+alias gp="git push"
+alias gpl="git pull"
+alias gl="git log --oneline"
+alias gb="git branch"
+alias gi="git init"
 
 # Completion styling
 zstyle ':completion:*' matcher-list \
