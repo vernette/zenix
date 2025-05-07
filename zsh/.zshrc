@@ -60,10 +60,15 @@ setopt hist_save_no_dups
 setopt hist_find_no_dups
 
 # Aliases
+
+## Base
+
 alias ls='eza -T --group-directories-first -L 1 --icons always'
 alias v="nvim"
 alias zshconf="$EDITOR ~/.zshrc && source ~/.zshrc"
 alias nixconf="sudoedit /etc/nixos/configuration.nix"
+
+## Git
 
 alias gc="git clone"
 alias gcm="git commit"
@@ -81,6 +86,19 @@ alias gl="git log --oneline"
 alias gb="git branch"
 alias gi="git init"
 
+## Docker
+
+alias dp="docker pull"
+alias dps="docker ps"
+alias di="docker images"
+alias dr="docker rm"
+alias drmi="docker rmi"
+alias dc="docker compose"
+alias dcd="docker compose down"
+alias dcu="docker compose up"
+alias dcr="docker compose restart"
+alias dcl="docker compose logs"
+
 # Completion styling
 zstyle ':completion:*' matcher-list \
     'm:{[:lower:]}={[:upper:]}' \
@@ -90,7 +108,7 @@ zstyle ':completion:*' completer _complete _approximate
 zstyle ':completion:*:*:*:*:files' ignored-patterns ''
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icon=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icons=always $realpath'
 
 # Functions
 detect_virtualenv() {
@@ -111,10 +129,12 @@ detect_virtualenv() {
   fi
 }
 
+## Delete all containers
 ddac() {
   docker rm -vf $(docker ps -aq)
 }
 
+## Delete all images
 ddai() {
   docker rmi -f $(docker images -aq)
 }
