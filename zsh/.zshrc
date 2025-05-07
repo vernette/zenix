@@ -112,21 +112,23 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icons=always $
 
 # Functions
 detect_virtualenv() {
-  if [[ -z "$VIRTUAL_ENV" ]] ; then
-    # If env folder is found, activate the virtualenv
-    if [[ -d ./venv ]] ; then
-      source ./venv/bin/activate
-    elif [[ -d ./.venv ]] ; then
-      source ./.venv/bin/activate
-    fi
+  local venv_dirs=("venv" ".venv" "env" ".env" "virtualenv")
+
+  if [[ -z "$VIRTUAL_ENV" ]]; then
+    for venv_dir in "${venv_dirs[@]}"; do
+      if [[ -d "./$venv_dir" && -f "./$venv_dir/bin/activate" ]]; then
+        source "./$venv_dir/bin/activate"
+        return 0
+      fi
+    done
   else
-    # Check if the current folder belongs to the earlier VIRTUAL_ENV folder
-    # If not, deactivate the virtual environment
-    parentdir="$(dirname "$VIRTUAL_ENV")"
-    if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+    local parentdir="$(dirname "$VIRTUAL_ENV")"
+    if [[ "$PWD"/ != "$parentdir"/* && "$PWD" != "$parentdir" ]]; then
       deactivate
     fi
   fi
+
+  return 0
 }
 
 ## Delete all containers
