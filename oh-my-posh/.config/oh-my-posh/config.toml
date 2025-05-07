@@ -31,6 +31,10 @@ final_space = true
       style = 'full'
 
   [[blocks.segments]]
+    template = ' 󰌠 ({{ ((.Venv)) }}) {{ .Full }}'
+    type = 'python'
+
+  [[blocks.segments]]
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     foreground = 'grey'
     background = 'transparent'
