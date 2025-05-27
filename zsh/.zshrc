@@ -109,6 +109,8 @@ zstyle ':completion:*:*:*:*:files' ignored-patterns ''
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icons=always $realpath'
+zstyle ':fzf-tab:complete:rm:*' fzf-preview 'eza --color=always --icons=always $realpath'
+zstyle ':fzf-tab:complete:eza:*' fzf-preview 'eza --color=always --icons=always $realpath'
 
 # Functions
 detect_virtualenv() {
