@@ -20,26 +20,22 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '{{ .Path }}'
-    foreground = 'blue'
-    background = 'transparent'
     type = 'path'
     style = 'plain'
+    foreground = 'blue'
+    background = 'transparent'
+    template = '{{ .Path }} '
 
     [blocks.segments.properties]
       cache_duration = 'none'
       style = 'full'
 
   [[blocks.segments]]
-    template = ' 󰌠 ({{ ((.Venv)) }}) {{ .Full }}'
-    type = 'python'
-
-  [[blocks.segments]]
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
-    foreground = 'grey'
-    background = 'transparent'
     type = 'git'
     style = 'plain'
+    foreground = 'grey'
+    background = 'transparent'
+    template = '{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
 
     [blocks.segments.properties]
       branch_icon = ''
@@ -47,16 +43,31 @@ final_space = true
       commit_icon = '@'
       fetch_status = true
 
+  [[blocks.segments]]
+    type = 'python'
+    foreground = 'green'
+    template = '🐍 ({{ ((.Venv)) }}) {{ .Full }} '
+
+  [[blocks.segments]]
+    type = 'docker'
+    style = 'plain'
+    foreground = 'blue'
+    background = 'transparent'
+    template = '🐳 '
+
+    [blocks.segments.properties]
+      display_mode = 'files'
+
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
 
   [[blocks.segments]]
-    template = '{{ div .Ms 1000 }}s'
-    foreground = 'yellow'
-    background = 'transparent'
     type = 'executiontime'
     style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ div .Ms 1000 }}s'
 
     [blocks.segments.properties]
       cache_duration = 'none'
@@ -68,11 +79,11 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '❯'
-    background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
+    background = 'transparent'
+    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}green{{end}}']
+    template = '❯'
 
     [blocks.segments.properties]
       cache_duration = 'none'
