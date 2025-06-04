@@ -63,7 +63,7 @@ setopt hist_find_no_dups
 
 ## Base
 
-alias ls='eza -T --group-directories-first -L 1 --icons always'
+alias ls='eza --icons always --tree --group-directories-first --level 1 --time-style long-iso'
 alias v="nvim"
 alias zshconf="$EDITOR ~/.zshrc && source ~/.zshrc"
 alias nixconf="sudoedit /etc/nixos/configuration.nix"
