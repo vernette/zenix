@@ -85,6 +85,7 @@ alias gpl="git pull"
 alias gl="git log --oneline"
 alias gb="git branch"
 alias gi="git init"
+alias gsh="git show"
 
 ## Docker
 
