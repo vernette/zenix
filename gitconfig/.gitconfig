@@ -1,0 +1,43 @@
+[core]
+  compression = 9
+  whitespace = error
+  preloadindex = true
+  pager = delta
+
+[init]
+  defaultBranch = master
+
+[pull]
+  default = current
+  rebase = true
+
+[rebase]
+  autoStash = true
+  missingCommitsCheck = warn
+
+[status]
+  branch = true
+  short = true
+  showStash = true
+  showUntrackedFiles = all
+
+[diff]
+  context = 10
+  renames = copies
+  interHunkContext = 10
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  true-color = always
+  dark = true
+  navigate = true
+	side-by-side = true
+  ; syntax-theme = zenburn
+
+[merge]
+  conflictstyle = zdiff3
+
+[url "git@github.com:"]
+  insteadOf = "gh:"
