@@ -18,12 +18,11 @@ ruff.args = {
 
 return {
   linters_by_ft = {
-    python = { "ruff", "mypy" },
+    python = { "ruff", "mypy", "pydocstyle", "vulture" },
     lua = { "selene" },
     json = { "jsonlint" },
     yaml = { "yamllint" },
     dockerfile = { "hadolint" },
-    bash = { "shellcheck" },
     nix = { "statix" },
     sql = { "sqlfluff" },
     html = { "htmlhint" },
