@@ -17,7 +17,7 @@ return {
     "docformatter", -- Python
     "shfmt", -- Shell
     -- "alejandra", -- Nix
-    "prettierd", -- CSS, HTML, JSON, JavaScript, Markdown, YAML, etc
+    "prettier", -- CSS, HTML, JSON, JavaScript, Markdown, YAML, etc
     "nginx-config-formatter", -- Nginx
 
     -- Linters
