@@ -13,6 +13,8 @@ return {
     -- Formatters
     "stylua", -- Lua
     "ruff", -- Python
+    "pydocstyle", -- Python
+    "docformatter", -- Python
     "shfmt", -- Shell
     -- "alejandra", -- Nix
     "prettierd", -- CSS, HTML, JSON, JavaScript, Markdown, YAML, etc
@@ -20,6 +22,7 @@ return {
 
     -- Linters
     "mypy", -- Python
+    "vulture", -- Python
     "selene", -- Lua
     "shellcheck", -- Shell
     "hadolint", -- Dockerfile
