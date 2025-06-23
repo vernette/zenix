@@ -1,6 +1,6 @@
 return {
   formatters_by_ft = {
-    python = { "ruff_format" },
+    python = { "ruff_format", "docformatter" },
     lua = { "stylua" },
     sh = { "shfmt" },
     json = { "prettierd" },
