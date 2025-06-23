@@ -6,7 +6,7 @@ ruff.args = {
   "--output-format",
   "json",
   "--select",
-  "E,F,UP,N,I,ASYNC,S,PTH,B,W,Q,C,D,R,G,PT",
+  "E,F,UP,N,I,ASYNC,S,PTH,B,W,Q,C,R,G,PT",
   "--ignore",
   "Q000",
   "--line-length",
