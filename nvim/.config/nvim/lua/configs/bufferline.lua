@@ -3,7 +3,7 @@ return {
     show_buffer_close_icons = false,
     offsets = {
       {
-        filetype = "NvimTree",
+        filetype = "neo-tree",
         highlight = "Directory",
         separator = true,
       },

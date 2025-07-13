@@ -27,9 +27,9 @@ map("n", "<C-l>", "<C-w>l", "Move right")
 
 map("n", "<Esc>", ":noh<CR>", "Clear Highlight")
 
--- NvimTree
-map("n", "<C-n>", ":NvimTreeToggle<CR>", "Toggle NvimTree")
-map("n", "<leader>e", ":NvimTreeFocus<CR>", "Focus NvimTree")
+-- NeoTree
+map("n", "<C-n>", ":Neotree toggle<CR>", "Toggle NeoTree")
+map("n", "<leader>e", ":Neotree focus<CR>", "Focus NeoTree")
 
 -- Oil
 map("n", "-", ":Oil --float<CR>", "Open Current Directory in Oil")
