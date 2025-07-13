@@ -24,7 +24,7 @@ return {
     yaml = { "yamllint" },
     dockerfile = { "hadolint" },
     nix = { "statix" },
-    sql = { "sqlfluff" },
+    sql = { "sqruff" },
     html = { "htmlhint" },
   },
 }

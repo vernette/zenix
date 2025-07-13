@@ -12,6 +12,7 @@ return {
     markdown = { "prettier" },
     nix = { "alejandra" },
     nginx = { "nginxfmt" },
+    sql = { "sqruff" },
   },
   formatters = {
     ruff_format = {
