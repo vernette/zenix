@@ -79,7 +79,8 @@ map("n", "<leader>fm", function()
 end, "Format Buffer")
 
 -- Outline
-map("n", "<leader>ps", ":Outline<CR>", "Toggle Outline")
+map("n", "<leader>ot", ":Outline<CR>", "Toggle Outline")
+map("n", "<leader>of", ":OutlineFocus<CR>", "Toggle Outline")
 
 -- Markdown
 map("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", "Toggle Markdown Preview")
