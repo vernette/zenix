@@ -26,6 +26,7 @@ opt.cursorline = true
 opt.showmode = false
 opt.signcolumn = "yes"
 opt.inccommand = "split"
+opt.termguicolors = true
 
 -- Etc
 opt.fileencoding = "utf-8"
