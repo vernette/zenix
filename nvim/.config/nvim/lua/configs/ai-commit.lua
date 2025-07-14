@@ -1,4 +1,4 @@
 return {
-  model = "meta-llama/llama-4-maverick:free",
+  model = "qwen/qwen-2.5-coder-32b-instruct:free",
   auto_push = false,
 }
