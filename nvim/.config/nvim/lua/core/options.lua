@@ -27,6 +27,8 @@ opt.showmode = false
 opt.signcolumn = "yes"
 opt.inccommand = "split"
 opt.termguicolors = true
+opt.foldenable = true
+opt.foldlevelstart = 99
 
 -- Etc
 opt.fileencoding = "utf-8"
