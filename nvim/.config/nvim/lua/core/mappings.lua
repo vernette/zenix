@@ -123,3 +123,8 @@ map("n", "<leader>ct", ":CompilerToggleResults<CR>", "Toggle Compiler Results")
 map("n", "<leader>tf", function()
   require("f-string-toggle").toggle_fstring()
 end, "Toggle f-string")
+
+-- Biscuits
+map("n", "<leader>bt", function()
+  require("nvim-biscuits").toggle_biscuits()
+end, "Toggle Biscuits")
