@@ -33,7 +33,6 @@ return {
   },
 
   extensions = {
-    ["ui-select"] = { require("telescope.themes").get_cursor({}) },
     import = { insert_at_top = true },
     fzf = {},
   },
