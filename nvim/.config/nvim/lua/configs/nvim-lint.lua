@@ -26,5 +26,6 @@ return {
     nix = { "statix" },
     sql = { "sqruff" },
     html = { "htmlhint" },
+    gitcommit = { "gitlint" },
   },
 }

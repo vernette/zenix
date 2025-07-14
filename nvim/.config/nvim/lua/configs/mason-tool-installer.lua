@@ -31,5 +31,6 @@ return {
     -- statix for Nix, but it's not in Mason. Installed system-wide
     "sqruff", -- SQL
     "htmlhint", -- HTML
+    "gitlint" -- Git commits
   },
 }
