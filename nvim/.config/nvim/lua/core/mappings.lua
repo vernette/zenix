@@ -70,7 +70,10 @@ map("n", "<leader>fi", ":Telescope import<CR>", "Show Imports")
 map("n", "<leader>ld", vim.diagnostic.setloclist, "LSP List Diagnostics")
 map("n", "[d", vim.diagnostic.goto_prev, "LSP Previous Diagnostic")
 map("n", "]d", vim.diagnostic.goto_next, "LSP Next Diagnostic")
-map("n", "<leader>lca", vim.lsp.buf.code_action, "LSP Code Actions")
+-- map("n", "<leader>lca", vim.lsp.buf.code_action, "LSP Code Actions")
+map("n", "<leader>lca", function()
+  require("actions-preview").code_actions()
+end, "LSP Code Actions With Preview" )
 map("n", "<leader>lr", vim.lsp.buf.rename, "LSP Rename")
 
 -- Conform
