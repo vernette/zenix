@@ -33,6 +33,5 @@ return {
     nil_ls = {},
     yamlls = {},
     jsonls = {},
-    harper_ls = {},
   },
 }

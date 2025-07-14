@@ -8,7 +8,6 @@ return {
     -- "nil_ls", -- Nix
     "json-lsp", -- JSON
     "yaml-language-server", -- YAML
-    "harper-ls", -- Grammar checker
 
     -- Formatters
     "stylua", -- Lua
