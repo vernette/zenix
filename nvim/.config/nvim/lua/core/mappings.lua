@@ -65,6 +65,9 @@ map("n", "<leader>fls", ":Telescope lsp_document_symbols<CR>", "Show LSP Symbols
 map("n", "<leader>fn", ":Telescope notify<CR>", "Show Notifications")
 map("n", "<leader>ft", ":TodoTelescope<CR>", "Show TODOs")
 map("n", "<leader>fi", ":Telescope import<CR>", "Show Imports")
+map("n", "<leader>rf", function()
+  require("telescope").extensions.refactoring.refactors()
+end, "Show Refactors")
 
 -- LSP
 map("n", "<leader>ld", vim.diagnostic.setloclist, "LSP List Diagnostics")
