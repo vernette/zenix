@@ -35,6 +35,7 @@ return {
     "ssh_config",
     "toml",
     "nginx",
+    "caddy",
   },
 
   indent = {
