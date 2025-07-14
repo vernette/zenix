@@ -73,7 +73,7 @@ map("n", "]d", vim.diagnostic.goto_next, "LSP Next Diagnostic")
 -- map("n", "<leader>lca", vim.lsp.buf.code_action, "LSP Code Actions")
 map("n", "<leader>lca", function()
   require("actions-preview").code_actions()
-end, "LSP Code Actions With Preview" )
+end, "LSP Code Actions With Preview")
 map("n", "<leader>lr", vim.lsp.buf.rename, "LSP Rename")
 
 -- Conform
@@ -115,3 +115,8 @@ end, "Toggle mini.diff Overlay")
 map("n", "<leader>co", ":CompilerOpen<CR>", "Open Compiler Menu")
 map("n", "<leader>cr", ":CompilerRedo<CR>", "Re-run Compiler Last Selected Option")
 map("n", "<leader>ct", ":CompilerToggleResults<CR>", "Toggle Compiler Results")
+
+-- Toggle f-string
+map("n", "<leader>tf", function()
+  require("f-string-toggle").toggle_fstring()
+end, "Toggle f-string")
