@@ -11,11 +11,12 @@ return {
         "mason",
         "notify",
         "toggleterm",
-        "NvimTree",
+        "neo-tree",
       },
       callback = function()
         vim.b.miniindentscope_disable = true
       end,
     })
   end,
+  opts = {},
 }
