@@ -1,5 +1,5 @@
 return {
   "hedyhli/outline.nvim",
-  lazy = false,
-  opts = {},
+  event = "LSPAttach",
+  opts = require("configs.outline"),
 }
