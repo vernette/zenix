@@ -8,18 +8,6 @@ return {
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
-    local signs = {
-      Error = " ",
-      Warn = " ",
-      Hint = "󰠠 ",
-      Info = " ",
-    }
-
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
-
     for server_name, server_settings in pairs(lsp_settings.servers) do
       local final_settings = vim.tbl_deep_extend("force", {
         capabilities = capabilities,
@@ -31,9 +19,31 @@ return {
       lspconfig[server_name].setup(final_settings)
     end
 
+    local signs = {
+      Error = " ",
+      Warn = " ",
+      Hint = "󰌵 ",
+      Info = " ",
+    }
+
+    local signConf = {
+      text = {},
+      texthl = {},
+      numhl = {},
+    }
+
+    for type, icon in pairs(signs) do
+      local severityName = string.upper(type)
+      local severity = vim.diagnostic.severity[severityName]
+      local hl = "DiagnosticSign" .. type
+      signConf.text[severity] = icon
+      signConf.texthl[severity] = hl
+      signConf.numhl[severity] = hl
+    end
+
     vim.diagnostic.config({
       virtual_text = true,
-      signs = true,
+      signs = signConf,
       underline = true,
       update_in_insert = true,
       severity_sort = true,
