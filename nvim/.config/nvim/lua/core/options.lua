@@ -24,7 +24,7 @@ opt.smartcase = true
 -- UI
 opt.cursorline = true
 opt.showmode = false
-opt.signcolumn = "yes"
+opt.statuscolumn = " %s %l "
 opt.inccommand = "split"
 opt.termguicolors = true
 opt.foldenable = true
