@@ -12,6 +12,7 @@ return {
         "notify",
         "toggleterm",
         "neo-tree",
+        "trouble",
       },
       callback = function()
         vim.b.miniindentscope_disable = true

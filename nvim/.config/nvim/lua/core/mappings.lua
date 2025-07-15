@@ -128,3 +128,7 @@ end, "Toggle f-string")
 map("n", "<leader>bt", function()
   require("nvim-biscuits").toggle_biscuits()
 end, "Toggle Biscuits")
+
+-- Trouble
+map("n", "<leader>td", ":Trouble diagnostics toggle<CR>", "Toggle Diagnostics")
+map("n", "<leader>tbd", ":Trouble diagnostics toggle filter.buf=0<CR>", "Toggle Buffer Diagnostics")
