@@ -140,3 +140,8 @@ end, "Next TODO Comment")
 map("n", "[t", function()
   require("todo-comments").jump_prev()
 end, "Previous TODO Comment")
+
+-- UndoTree
+map("n", "<leader>ut", function()
+  require("undotree").toggle()
+end, "Toggle UndoTree")
