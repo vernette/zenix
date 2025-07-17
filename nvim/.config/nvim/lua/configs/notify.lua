@@ -1,5 +1,5 @@
 return {
   render = "wrapped-compact",
-  stages = "slide",
-  timeout = 2000,
+  stages = "fade",
+  timeout = 1000,
 }
