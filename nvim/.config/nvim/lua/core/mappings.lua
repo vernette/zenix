@@ -132,3 +132,11 @@ end, "Toggle Biscuits")
 -- Trouble
 map("n", "<leader>td", ":Trouble diagnostics toggle<CR>", "Toggle Diagnostics")
 map("n", "<leader>tbd", ":Trouble diagnostics toggle filter.buf=0<CR>", "Toggle Buffer Diagnostics")
+
+-- TODO Comments
+map("n", "]t", function()
+  require("todo-comments").jump_next()
+end, "Next TODO Comment")
+map("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, "Previous TODO Comment")
