@@ -1,3 +1,3 @@
 return {
-  { suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" } },
+  suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 }

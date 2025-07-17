@@ -145,3 +145,8 @@ end, "Previous TODO Comment")
 map("n", "<leader>ut", function()
   require("undotree").toggle()
 end, "Toggle UndoTree")
+
+-- Auto Session
+map("n", "<leader>fs", function()
+  require("auto-session.session-lens").search_session()
+end, "Show Active Sessions")
