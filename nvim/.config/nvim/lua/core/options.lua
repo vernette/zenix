@@ -46,8 +46,8 @@ opt.wrap = false
 -- Disable nvim intro
 opt.shortmess:append("sI")
 
--- Uncomment the following line to set the font for Neovide
--- opt.guifont = "JetBrainsMono Nerd Font"
+-- Set the font for Neovide
+opt.guifont = "JetBrainsMono\\ Nerd\\ Font:h10"
 
 vim.filetype.add({
   extension = {
