@@ -1,5 +1,5 @@
 return {
   "code-biscuits/nvim-biscuits",
   event = "BufReadPost",
-  opts = {},
+  opts = require("configs.nvim-biscuits"),
 }
