@@ -1,9 +1,10 @@
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
-    { "nvim-lua/plenary.nvim" },
-    { "piersolenski/telescope-import.nvim" },
+    "nvim-lua/plenary.nvim",
+    "piersolenski/telescope-import.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "debugloop/telescope-undo.nvim",
   },
   cmd = "Telescope",
   config = function()
@@ -11,5 +12,6 @@ return {
     telescope.setup(require("configs.telescope"))
     telescope.load_extension("import")
     telescope.load_extension("fzf")
+    telescope.load_extension("undo")
   end,
 }

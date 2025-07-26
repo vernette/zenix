@@ -68,6 +68,7 @@ map("n", "<leader>fi", ":Telescope import<CR>", "Show Imports")
 map("n", "<leader>rf", function()
   require("telescope").extensions.refactoring.refactors()
 end, "Show Refactors")
+map("n", "<leader>fu", ":Telescope undo", "Show Undos")
 
 -- LSP
 map("n", "<leader>ld", vim.diagnostic.setloclist, "LSP List Diagnostics")
@@ -140,11 +141,6 @@ end, "Next TODO Comment")
 map("n", "[t", function()
   require("todo-comments").jump_prev()
 end, "Previous TODO Comment")
-
--- UndoTree
-map("n", "<leader>ut", function()
-  require("undotree").toggle()
-end, "Toggle UndoTree")
 
 -- Auto Session
 map("n", "<leader>fs", function()
