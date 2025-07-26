@@ -29,6 +29,9 @@ return {
     -- statix for Nix, but it's not in Mason. Installed system-wide
     "sqruff", -- SQL
     "htmlhint", -- HTML
-    "gitlint" -- Git commits
+    "gitlint", -- Git commits
+
+    -- Tools
+    "deno", -- required by peek.nvim
   },
 }

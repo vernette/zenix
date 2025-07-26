@@ -90,7 +90,9 @@ map("n", "<leader>ot", ":Outline<CR>", "Toggle Outline")
 map("n", "<leader>of", ":OutlineFocus<CR>", "Toggle Outline")
 
 -- Markdown
-map("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", "Toggle Markdown Preview")
+map("n", "<leader>mp", function()
+  require("peek").open()
+end, "Open Markdown Preview")
 map("n", "<leader>mr", ":Markview toggle<CR>", "Toggle Markdown Rendering")
 
 -- Gitsigns
