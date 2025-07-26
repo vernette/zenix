@@ -148,3 +148,8 @@ end, "Previous TODO Comment")
 map("n", "<leader>fs", function()
   require("auto-session.session-lens").search_session()
 end, "Show Active Sessions")
+
+-- Codewindow
+map("n", "<leader>tm", function()
+  require("codewindow").toggle_minimap()
+end, "Toggle Minimap")
