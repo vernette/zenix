@@ -21,7 +21,6 @@ return {
 
     -- Linters
     "mypy", -- Python
-    "vulture", -- Python
     "selene", -- Lua
     "shellcheck", -- Shell
     "hadolint", -- Dockerfile
