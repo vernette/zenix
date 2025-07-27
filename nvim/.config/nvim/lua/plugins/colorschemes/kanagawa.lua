@@ -1,1 +1,1 @@
-return { "rebelot/kanagawa.nvim", opts = {} }
+return { "rebelot/kanagawa.nvim" }

@@ -1,1 +1,1 @@
-return { "ellisonleao/gruvbox.nvim", opts = {} }
+return { "ellisonleao/gruvbox.nvim" }

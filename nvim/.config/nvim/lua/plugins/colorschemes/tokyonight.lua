@@ -1,1 +1,1 @@
-return { "folke/tokyonight.nvim", opts = {} }
+return { "folke/tokyonight.nvim" }

@@ -1,1 +1,1 @@
-return { "navarasu/onedark.nvim", opts = {} }
+return { "navarasu/onedark.nvim" }
