@@ -40,7 +40,7 @@ return {
   linters_by_ft = {
     python = { "ruff", "mypy", "pydocstyle"},
     lua = { "selene" },
-    json = { "jsonlint" },
+    json = { "biomejs" },
     yaml = { "yamllint" },
     dockerfile = { "hadolint" },
     nix = { "statix" },
