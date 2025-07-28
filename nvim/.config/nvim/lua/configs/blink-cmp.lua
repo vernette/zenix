@@ -1,16 +1,41 @@
 return {
-  appearance = {
-    nerd_font_variant = "normal",
-  },
+  appearance = { nerd_font_variant = "normal" },
 
   keymap = { preset = "super-tab" },
 
-  fuzzy = {
-    implementation = "prefer_rust",
-  },
+  fuzzy = { implementation = "prefer_rust" },
 
   completion = {
     accept = { auto_brackets = { enabled = true } },
+    ghost_text = { enabled = true },
+
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 200,
+    },
+
+    menu = {
+      draw = {
+        columns = {
+          { "kind_icon" },
+          {
+            "label",
+            "label_description",
+            "source_name",
+            gap = 1,
+          },
+        },
+
+        components = {
+          source_name = {
+            text = function(ctx)
+              return "[" .. ctx.source_name .. "]"
+            end,
+            highlight = "BlinkCmpSource",
+          },
+        },
+      },
+    },
   },
 
   cmdline = {
@@ -29,27 +54,26 @@ return {
 
     providers = {
       lsp = {
+        max_items = 10,
         score_offset = 100,
-      },
-
-      snippets = {
-        score_offset = 80,
-      },
-
-      buffer = {
-        score_offset = 60,
       },
 
       codeium = {
         name = "Codeium",
         module = "codeium.blink",
         async = true,
+        max_items = 5,
+        score_offset = 80,
+      },
+
+      snippets = { score_offset = 60 },
+
+      buffer = {
+        max_items = 10,
         score_offset = 40,
       },
 
-      path = {
-        score_offset = 20,
-      },
+      path = { score_offset = 20 },
     },
   },
 }
