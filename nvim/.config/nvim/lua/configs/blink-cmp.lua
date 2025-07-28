@@ -50,12 +50,19 @@ return {
       "snippets",
       "path",
       "codeium",
+      "dotenv",
     },
 
     providers = {
       lsp = {
         max_items = 10,
         score_offset = 100,
+      },
+
+      dotenv = {
+        name = "dotenv",
+        module = "blink.compat.source",
+        score_offset = 90,
       },
 
       codeium = {
