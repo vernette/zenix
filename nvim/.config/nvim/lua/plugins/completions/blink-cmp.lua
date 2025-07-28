@@ -1,5 +1,11 @@
 return {
   {
+    "saghen/blink.compat",
+    version = "2.*",
+    lazy = true,
+    opts = {},
+  },
+  {
     "saghen/blink.cmp",
     dependencies = {
       "onsails/lspkind.nvim",
@@ -10,9 +16,8 @@ return {
     opts = require("configs.blink-cmp"),
   },
   {
-    "saghen/blink.compat",
-    version = "2.*",
+    "milanglacier/minuet-ai.nvim",
     lazy = true,
-    opts = {},
+    opts = require("configs.minuet-ai"),
   },
 }
