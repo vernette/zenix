@@ -17,6 +17,7 @@ return {
   },
   {
     "milanglacier/minuet-ai.nvim",
+    enabled = false,
     lazy = true,
     opts = require("configs.minuet-ai"),
   },

@@ -51,7 +51,7 @@ return {
       "path",
       "codeium",
       "dotenv",
-      "minuet",
+      -- "minuet",
     },
 
     providers = {
