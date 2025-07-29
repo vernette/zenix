@@ -1,8 +1,8 @@
+local mappings = require("core.mappings")
+
 return {
   default_config = function(client, bufnr)
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to Declaration" })
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to Definition" })
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "Show Hover Information" })
+    mappings.setup_lsp_mappings(bufnr)
   end,
 
   servers = {
