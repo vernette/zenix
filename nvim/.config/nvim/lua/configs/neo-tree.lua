@@ -3,13 +3,14 @@ return {
 
   window = {
     position = "left",
+    width = 45,
     auto_expand_width = true,
   },
 
   default_component_configs = {
     indent = {
       indent_size = 2,
-      padding = 2,
+      padding = 0,
     },
   },
 
