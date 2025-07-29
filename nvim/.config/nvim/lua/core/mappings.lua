@@ -12,13 +12,9 @@ local function map(mode, lhs, rhs, desc_or_opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
-local M = {}
-
-function M.setup_lsp_mappings(bufnr)
-  map("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to Declaration" })
-  map("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to Definition" })
-  map("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "Show Hover Information" })
-end
+map("n", "gD", vim.lsp.buf.declaration, "Go to Declaration")
+map("n", "gd", vim.lsp.buf.definition, "Go to Definition" )
+map("n", "K", vim.lsp.buf.hover, "Show Hover Information")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -159,5 +155,3 @@ end, "Previous TODO Comment")
 map("n", "<leader>tm", function()
   require("codewindow").toggle_minimap()
 end, "Toggle Minimap")
-
-return M

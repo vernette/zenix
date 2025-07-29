@@ -1,11 +1,11 @@
 return {
   ensure_installed = {
     -- LSP
-    "lua_ls", -- Lua
+    "lua-language-server", -- Lua
     "jedi-language-server", -- Python
-    "bashls", -- Bash
-    "dockerls", -- Dockerfile
-    -- "nil_ls", -- Nix
+    "bash-language-server", -- Bash
+    "dockerfile-language-server", -- Dockerfile
+    -- "nil", -- Nix
     "json-lsp", -- JSON
     "yaml-language-server", -- YAML
 
