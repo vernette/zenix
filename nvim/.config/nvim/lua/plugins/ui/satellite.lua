@@ -1,5 +1,5 @@
 return {
   "lewis6991/satellite.nvim",
   event = "BufReadPost",
-  opts = {},
+  opts = require("configs.satellite"),
 }
