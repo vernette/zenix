@@ -24,7 +24,7 @@ end
 
 return {
   formatters_by_ft = {
-    python = { "ruff_format", "docformatter" },
+    python = { "ruff_format" },
     lua = { "stylua" },
     sh = { "shfmt" },
     json = { "fixjson", "biome" },
