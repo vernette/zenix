@@ -1,5 +1,5 @@
 return {
-  retirementAgeMins = 10,
+  retirementAgeMins = 20,
   notificationOnAutoClose = true,
   deleteBufferWhenFileDeleted = true,
   ignoreUnsavedChangesBufs = false,
