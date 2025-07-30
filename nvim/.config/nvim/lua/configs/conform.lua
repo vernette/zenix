@@ -59,6 +59,13 @@ return {
         "--case-indent",
       },
     },
+    biome = {
+      prepend_args = {
+        "format",
+        "--json-formatter-indent-style",
+        "space",
+      },
+    },
   },
   format = {
     async = true,
