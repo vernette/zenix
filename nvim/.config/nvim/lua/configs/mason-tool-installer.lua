@@ -18,6 +18,7 @@ return {
     "prettier", -- Markdown
     "biome", -- JSON, JavaScript, CSS, HTML
     "yamlfmt", -- YAML
+    "taplo", -- TOML
     "nginx-config-formatter", -- Nginx
 
     -- Linters

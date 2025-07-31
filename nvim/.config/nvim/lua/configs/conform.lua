@@ -30,6 +30,7 @@ return {
     json = { "fixjson", "biome" },
     jsonc = { "fixjson", "biome" },
     yaml = { "yamlfmt" },
+    toml = { "taplo" },
     javascript = { "biome" },
     html = { "biome" },
     css = { "biome" },
