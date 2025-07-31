@@ -62,8 +62,11 @@ return {
     biome = {
       prepend_args = {
         "format",
+        "--fix",
         "--json-formatter-indent-style",
         "space",
+        "--files-max-size",
+        "5242880", -- 5 * 1024 * 1024 (5MB)
       },
     },
   },
