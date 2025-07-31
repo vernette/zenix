@@ -1,7 +1,8 @@
 vim.lsp.enable({
   "lua_ls",
-  "jedi_language_server",
+  -- "jedi_language_server",
   "ruff",
+  "pyright",
   "bashls",
   "dockerls",
   "yamlls",

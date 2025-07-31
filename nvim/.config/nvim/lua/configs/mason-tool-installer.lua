@@ -3,6 +3,7 @@ return {
     -- LSP
     "lua-language-server", -- Lua
     "jedi-language-server", -- Python
+    "pyright", -- Python
     "bash-language-server", -- Bash
     "dockerfile-language-server", -- Dockerfile
     -- "nil", -- Nix
