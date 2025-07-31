@@ -1,1 +1,4 @@
-return { cursor_line_only = true }
+return {
+  default_config = { prefix_string = " 󰙅 " },
+  cursor_line_only = true,
+}

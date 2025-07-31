@@ -63,4 +63,9 @@ return {
       node_decremental = "<Backspace>",
     },
   },
+
+  nvim_biscuits = {
+    enable = true,
+    disable = is_large_file,
+  }
 }
