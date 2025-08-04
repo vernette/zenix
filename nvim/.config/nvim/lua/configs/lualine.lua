@@ -1,20 +1,3 @@
-local get_active_formatters = function()
-  local conform = require("conform")
-  local formatters = conform.list_formatters_for_buffer()
-
-  if formatters and #formatters > 0 then
-    local formatter_names = {}
-
-    for _, formatter in ipairs(formatters) do
-      table.insert(formatter_names, formatter)
-    end
-
-    return "󰷈 Conform: " .. table.concat(formatter_names, ", ")
-  end
-
-  return ""
-end
-
 return {
   options = {
     globalstatus = true,
@@ -69,10 +52,6 @@ return {
 
     lualine_x = {
       {
-        get_active_formatters,
-        separator = "|",
-      },
-      {
         "lsp_status",
         icon = "󰂖 LSP:",
         symbols = { separator = ", " },
@@ -92,7 +71,7 @@ return {
   extensions = {
     "lazy",
     "mason",
-    "nvim-tree",
+    "neo-tree",
     "nvim-dap-ui",
     "toggleterm",
     "trouble",
