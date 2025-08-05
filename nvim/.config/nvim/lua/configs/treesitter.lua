@@ -14,28 +14,11 @@ return {
     "python",
     "bash",
     "lua",
-    "markdown",
-    "markdown_inline",
     "json",
     "jsonc",
     "yaml",
-    "hyprlang",
-    "gitcommit",
-    "git_config",
-    "gitignore",
-    "dockerfile",
-    "nix",
-    "sql",
-    "css",
-    "html",
-    "javascript",
-    "http",
-    "jq",
-    "requirements",
-    "ssh_config",
     "toml",
-    "nginx",
-    "caddy",
+    "dockerfile",
   },
 
   indent = {
@@ -67,5 +50,5 @@ return {
   nvim_biscuits = {
     enable = true,
     disable = is_large_file,
-  }
+  },
 }
