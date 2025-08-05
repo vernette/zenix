@@ -21,4 +21,13 @@ return {
       hide_gitignored = true,
     },
   },
+
+  source_selector = {
+    winbar = true,
+
+    sources = {
+      { source = "filesystem" },
+      { source = "git_status" },
+    },
+  },
 }
