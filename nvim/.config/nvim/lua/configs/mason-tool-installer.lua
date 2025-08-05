@@ -23,7 +23,7 @@ return {
     "nginx-config-formatter", -- Nginx
 
     -- Linters
-    "mypy", -- Python
+    "ty", -- Python
     "selene", -- Lua
     "shellcheck", -- Shell
     "hadolint", -- Dockerfile

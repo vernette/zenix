@@ -38,7 +38,7 @@ ruff.args = ruff_args
 
 return {
   linters_by_ft = {
-    python = { "ruff", "mypy", "pydocstyle"},
+    python = { "ruff", "pydocstyle"},
     lua = { "selene" },
     json = { "biomejs" },
     yaml = { "yamllint" },
