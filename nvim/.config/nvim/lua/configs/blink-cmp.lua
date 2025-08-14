@@ -76,7 +76,10 @@ return {
         score_offset = 80,
       },
 
-      snippets = { score_offset = 60 },
+      snippets = {
+        max_items = 3,
+        score_offset = 60,
+      },
 
       buffer = {
         max_items = 10,
