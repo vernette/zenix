@@ -13,7 +13,6 @@ return {
     -- Formatters
     "stylua", -- Lua
     "ruff", -- Python
-    "pydocstyle", -- Python
     "shfmt", -- Shell
     -- "alejandra", -- Nix
     "prettier", -- Markdown
