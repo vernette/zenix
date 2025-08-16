@@ -7,7 +7,10 @@ return {
   },
   {
     "saghen/blink.cmp",
-    dependencies = "onsails/lspkind.nvim",
+    dependencies = {
+      "onsails/lspkind.nvim",
+      "mikavilpas/blink-ripgrep.nvim",
+    },
     version = "1.*",
     event = { "InsertEnter", "CmdlineEnter" },
     opts = require("configs.blink-cmp"),

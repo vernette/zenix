@@ -51,11 +51,12 @@ return {
       "path",
       "codeium",
       -- "minuet",
+      "ripgrep",
     },
 
     providers = {
       lsp = {
-        max_items = 10,
+        max_items = 5,
         score_offset = 100,
       },
 
@@ -81,12 +82,25 @@ return {
         score_offset = 60,
       },
 
+      ripgrep = {
+        module = "blink-ripgrep",
+        name = "Ripgrep",
+        opts = {
+          backend = { use = "gitgrep-or-ripgrep" },
+        },
+        max_items = 10,
+        score_offset = 50,
+      },
+
       buffer = {
         max_items = 10,
         score_offset = 40,
       },
 
-      path = { score_offset = 20 },
+      path = {
+        max_items = 5,
+        score_offset = 20,
+      },
     },
   },
 }
