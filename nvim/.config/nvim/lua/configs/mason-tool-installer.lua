@@ -2,7 +2,6 @@ return {
   ensure_installed = {
     -- LSP
     "lua-language-server", -- Lua
-    "jedi-language-server", -- Python
     "pyright", -- Python
     "bash-language-server", -- Bash
     "dockerfile-language-server", -- Dockerfile
@@ -22,7 +21,6 @@ return {
     "nginx-config-formatter", -- Nginx
 
     -- Linters
-    "ty", -- Python
     "selene", -- Lua
     "shellcheck", -- Shell
     "hadolint", -- Dockerfile
