@@ -5,6 +5,8 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
 export AUTO_NOTIFY_THRESHOLD=20
 export AUTO_NOTIFY_TITLE="Hey! '%command' has just finished"
 export AUTO_NOTIFY_BODY="It completed in %elapsed seconds"
+export FZF_DEFAULT_COMMAND="fd --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --hidden --exclude .mypy_cache --exclude .ruff_cache --exclude venv --exclude .venv"
 
 # Print pokemon
 krabby random --no-title
@@ -31,27 +33,13 @@ zinit light fdellwing/zsh-bat
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 
-# Load completions
-autoload -Uz compinit && compinit -C
-zinit cdreplay -q
-
-autoload -U select-word-style
-select-word-style bash
-
-# Keybindings
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-bindkey '^[[1;5D' backward-word
-bindkey '^[[1;5C' forward-word
-
 # History
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 HISTDUPE=erase
 
-# zsh options
+# Zsh options
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
@@ -59,17 +47,42 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_find_no_dups
 
+# Completions
+autoload -Uz compinit && compinit -C
+zinit cdreplay -q
+
+zstyle ':completion:*' matcher-list \
+    'm:{[:lower:]}={[:upper:]}' \
+    'l:|=* r:|=*' \
+    'r:|=*'
+zstyle ':completion:*' completer _complete _approximate
+zstyle ':completion:*:*:*:*:files' ignored-patterns ''
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+
+zstyle ':fzf-tab:complete:eza:*' fzf-preview '[[ -d $realpath ]] && eza --color=always --icons=always --oneline $realpath || bat --color=always --style=numbers $realpath || cat $realpath'
+zstyle ':fzf-tab:complete:rm:*' fzf-preview '[[ -d $realpath ]] && eza --color=always --icons=always --oneline $realpath || bat --color=always --style=numbers $realpath || cat $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icons=always --oneline $realpath'
+
+# ZLE
+autoload -U select-word-style
+select-word-style bash
+
+# Keybindings
+bindkey -e
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
 # Aliases
 
 ## Base
-
-alias ls='eza --icons always --tree --group-directories-first --level 1 --time-style long-iso'
+alias ls="eza --icons always --tree --group-directories-first --level 1 --time-style long-iso"
 alias v="nvim"
 alias zshconf="$EDITOR ~/.zshrc && source ~/.zshrc"
-alias nixconf="sudoedit /etc/nixos/configuration.nix"
 
 ## Git
-
 alias gc="git clone"
 alias gcm="git commit"
 alias gcl="git clean"
@@ -84,16 +97,12 @@ alias gp="git push"
 alias gpl="git pull"
 alias gl="git log --oneline"
 alias gb="git branch"
-alias gi="git init"
 alias gsh="git show"
 alias gst="git stash"
 
 ## Docker
-
-alias dp="docker pull"
 alias dps="docker ps"
 alias di="docker images"
-alias dr="docker rm"
 alias drmi="docker rmi"
 alias dc="docker compose"
 alias dcd="docker compose down"
@@ -101,60 +110,44 @@ alias dcu="docker compose up"
 alias dcr="docker compose restart"
 alias dcl="docker compose logs"
 
-# Completion styling
-zstyle ':completion:*' matcher-list \
-    'm:{[:lower:]}={[:upper:]}' \
-    'l:|=* r:|=*' \
-    'r:|=*'
-zstyle ':completion:*' completer _complete _approximate
-zstyle ':completion:*:*:*:*:files' ignored-patterns ''
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icons=always $realpath'
-zstyle ':fzf-tab:complete:rm:*' fzf-preview 'eza --color=always --icons=always $realpath'
-zstyle ':fzf-tab:complete:eza:*' fzf-preview 'eza --color=always --icons=always $realpath'
-
 # Functions
-detect_virtualenv() {
+function auto_venv() {
   local venv_dirs=("venv" ".venv" "env" ".env" "virtualenv")
 
-  if [[ -z "$VIRTUAL_ENV" ]]; then
-    for venv_dir in "${venv_dirs[@]}"; do
-      if [[ -d "./$venv_dir" && -f "./$venv_dir/bin/activate" ]]; then
-        source "./$venv_dir/bin/activate"
-        return 0
-      fi
-    done
-  else
-    local parentdir="$(dirname "$VIRTUAL_ENV")"
-    if [[ "$PWD"/ != "$parentdir"/* && "$PWD" != "$parentdir" ]]; then
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    local venv_parent="${VIRTUAL_ENV:h}"
+    if [[ "$PWD" != "$venv_parent"* ]]; then
       deactivate
+    else
+      return
     fi
   fi
 
-  return 0
+  local dir="$PWD"
+  while [[ "$dir" != "/" ]]; do
+    for venv_dir in "${venv_dirs[@]}"; do
+      if [[ -f "$dir/$venv_dir/bin/activate" ]]; then
+        source "$dir/$venv_dir/bin/activate"
+        return
+      fi
+    done
+    dir="${dir:h}"
+  done
 }
 
-## Delete all containers
-ddac() {
-  docker rm -vf $(docker ps -aq)
+function get_cdn() {
+  local ip
+  local domain="$1"
+  ip=$(dig +short "$domain" | head -1)
+  curl -s "https://ipinfo.io/$ip" | jq
 }
 
-## Delete all images
-ddai() {
-  docker rmi -f $(docker images -aq)
-}
-
-traceroute-mapper() {
-  traceroute=$(traceroute -q1 $* | sed ':a;N;$!ba;s/\n/%0A/g')
-  xdg-open "https://stefansundin.github.io/traceroute-mapper/?trace=$traceroute"
-}
-
-# Run Python virtualenv detection script
+# Hooks
 autoload -U add-zsh-hook
-add-zsh-hook chpwd detect_virtualenv
+add-zsh-hook chpwd auto_venv
 
 # Shell integrations
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # Older fzf versions
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
