@@ -110,6 +110,9 @@ alias dcu="docker compose up"
 alias dcr="docker compose restart"
 alias dcl="docker compose logs"
 
+## Etc
+alias habr-nvim="NVIM_APPNAME=habr-nvim $EDITOR"
+
 # Functions
 function auto_venv() {
   local venv_dirs=("venv" ".venv" "env" ".env" "virtualenv")
@@ -138,7 +141,8 @@ function auto_venv() {
 function get_cdn() {
   local ip
   local domain="$1"
-  ip=$(dig +short "$domain" | head -1)
+  local dns="1.1.1.1"
+  ip=$(dig +short "$domain" "@$dns" "+https" | head -1)
   curl -s "https://ipinfo.io/$ip" | jq
 }
 
