@@ -146,6 +146,11 @@ function get_cdn() {
   curl -s "https://ipinfo.io/$ip" | jq
 }
 
+function git_stats() {
+  local n="${1:-1}"
+  git diff HEAD~${n}..HEAD --shortstat
+}
+
 # Hooks
 autoload -U add-zsh-hook
 add-zsh-hook chpwd auto_venv
