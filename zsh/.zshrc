@@ -151,6 +151,12 @@ function git_stats() {
   git diff HEAD~${n}..HEAD --shortstat
 }
 
+function code2png() {
+  local file="$1"
+  local output="${2:-}"
+  freeze "$file" --border.radius 8 --theme tokyonight-storm --output "$output"
+}
+
 # Hooks
 autoload -U add-zsh-hook
 add-zsh-hook chpwd auto_venv
