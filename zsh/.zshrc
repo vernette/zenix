@@ -153,8 +153,15 @@ function git_stats() {
 
 function code2png() {
   local file="$1"
-  local output="${2:-}"
-  freeze "$file" --border.radius 8 --theme tokyonight-storm --output "$output"
+  local border_radius=8
+  local theme="tokyonight-storm"
+  local args=(--border.radius "$border_radius" --theme "$theme")
+
+  if [[ $# -eq 3 ]]; then
+    args+=(--language "$2")
+  fi
+
+  freeze "$file" "${args[@]}" --output "${@: -1}"
 }
 
 # Hooks
