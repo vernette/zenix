@@ -153,15 +153,23 @@ function git_stats() {
 
 function code2png() {
   local file="$1"
-  local border_radius=8
-  local theme="tokyonight-storm"
-  local args=(--border.radius "$border_radius" --theme "$theme")
+  local args=(--border.radius 8 --theme "tokyonight-storm")
 
   if [[ $# -eq 3 ]]; then
     args+=(--language "$2")
   fi
 
   freeze "$file" "${args[@]}" --output "${@: -1}"
+}
+
+function cmd2png() {
+  local cmd="$1"
+  local output="$2"
+  freeze --execute "$cmd" --border.radius 8 --theme "tokyonight-storm" --output "$output"
+}
+
+function ls2png() {
+  cmd2png "eza --tree --icons always --group-directories-first --level 1" "$1"
 }
 
 # Hooks
