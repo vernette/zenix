@@ -5,7 +5,7 @@ local config = {}
 config.color_scheme = "Tokyo Night"
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 14.0
+config.font_size = 16.0
 
 config.window_decorations = "TITLE | RESIZE"
 config.window_background_opacity = 0.9
