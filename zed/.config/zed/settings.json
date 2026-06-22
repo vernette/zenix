@@ -1,0 +1,203 @@
+{
+  // Theme
+  "icon_theme": {
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme",
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Tokyo Night Light",
+    "dark": "Tokyo Night",
+  },
+
+  // Font
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_family": ".ZedSans",
+  "buffer_font_size": 16.0,
+  "ui_font_size": 16.0,
+
+  // UI
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_user_menu": false,
+    "show_branch_status_icon": true,
+  },
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": true,
+  },
+  "file_finder": {
+    "modal_max_width": "small",
+  },
+  "indent_guides": {
+    "enabled": false,
+  },
+  "colorize_brackets": true,
+  "current_line_highlight": "line",
+  "cursor_shape": "bar",
+  "cursor_blink": true,
+  "buffer_line_height": "comfortable",
+  "show_whitespaces": "trailing",
+  "inline_code_actions": false,
+
+  // Layout
+  "project_panel": {
+    "dock": "right",
+    "hide_root": true,
+    "auto_reveal_entries": false,
+    "auto_fold_dirs": false,
+    "sticky_scroll": false,
+    "indent_guides": {
+      "show": "never",
+    },
+  },
+  "terminal": {
+    "dock": "bottom",
+    "keep_selection_on_copy": false,
+    "copy_on_select": true,
+  },
+  "agent": {
+    "dock": "left",
+  },
+  "scrollbar": {
+    "axes": {
+      "vertical": true,
+      "horizontal": false,
+    },
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+
+  "vertical_scroll_margin": 10,
+
+  // Editor
+  "vim_mode": false,
+  "tab_size": 2,
+  "drag_and_drop_selection": {
+    "enabled": false,
+  },
+  "extend_comment_on_newline": false,
+  "seed_search_query_from_cursor": "selection",
+  "show_signature_help_after_edits": true,
+  "auto_signature_help": true,
+  "format_on_save": "on",
+
+  // Completions & Predictions
+  "edit_predictions": {
+    "mode": "subtle",
+    "provider": "zed",
+  },
+  "completions": {
+    "lsp_fetch_timeout_ms": 0,
+    "words_min_length": 3,
+  },
+
+  // Diagnostics
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+    "lsp_pull_diagnostics": {
+      "enabled": false,
+    },
+  },
+
+  // Search
+  "search": {
+    "center_on_match": true,
+  },
+  "use_smartcase_search": true,
+
+  // Extensions
+  "auto_install_extensions": {
+    // Theme
+    "tokyo-night": true,
+    "material-icon-theme": true,
+
+    // LSP
+    "html": true,
+    "dockerfile": true,
+    "lua": true,
+    "ansible": true,
+    "rst": true,
+    "github-actions": true,
+    "basher": true,
+    "marksman": true,
+    "zuban": true,
+
+    // Treesitter
+    "toml": true,
+    "sql": true,
+    "python-requirements": true,
+    "caddyfile": true,
+    "comment": true,
+
+    // Snippets
+    "python-snippets": true,
+    "markdown-snippets": true,
+  },
+
+  // Languages
+  "languages": {
+    "Python": {
+      "language_servers": ["!zuban", "!pyright", "ruff", "basedpyright"],
+      "format_on_save": "off",
+      "ensure_final_newline_on_save": false,
+      "remove_trailing_whitespace_on_save": false,
+    },
+    "Markdown": {
+      "format_on_save": "off",
+    },
+    "YAML": {
+      "format_on_save": "off",
+    },
+  },
+
+  // LSP
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "diagnosticMode": "workspace",
+          "diagnosticSeverityOverrides": {
+            "reportOperatorIssue": "none",
+            "reportArgumentType": "none",
+            "reportIncompatibleMethodOverride": "none",
+          },
+          "inlayHints": {
+            "callArgumentNames": true,
+          },
+        },
+      },
+    },
+  },
+
+  // MCP Servers
+  "context_servers": {},
+
+  // SSH
+  "ssh_connections": [],
+
+  // AI
+  "language_models": {},
+
+  // Etc
+  "auto_update": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "restore_on_startup": "empty_tab",
+  "when_closing_with_no_tabs": "keep_window_open",
+  "autosave": "on_focus_change",
+  "cli_default_open_behavior": "existing_window",
+  "close_on_file_delete": true,
+}
