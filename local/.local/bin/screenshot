@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+SCREENSHOTS_DIR="/home/$USER/Pictures/Screenshots"
+FILENAME="$(date +%s).png"
+
+if [ ! -d "$SCREENSHOTS_DIR" ]; then
+  mkdir -p "$SCREENSHOTS_DIR"
+fi
+
+take_screenshot() {
+  local mode="$1"
+  local filepath="$SCREENSHOTS_DIR/$FILENAME"
+  local tmpfile maim_cmd
+
+  case $mode in
+    fullscreen)
+      maim_cmd="maim"
+      ;;
+    select)
+      maim_cmd="maim --select"
+      ;;
+    *)
+      echo "Usage: $0 {fullscreen|select}"
+      return 1
+      ;;
+  esac
+
+  tmpfile=$(mktemp)
+  eval "$maim_cmd" >"$tmpfile"
+
+  if [ -s "$tmpfile" ]; then
+    cp "$tmpfile" "$filepath"
+    xclip -selection clipboard -t image/png <"$tmpfile"
+  fi
+
+  rm -f "$tmpfile"
+}
+
+take_screenshot "$1"
