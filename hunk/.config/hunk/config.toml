@@ -1,0 +1,6 @@
+theme = "terminal"
+transparent_background = true
+file_gap = 3
+menu_bar = false
+hunk_headers = false
+exclude_untracked = true
