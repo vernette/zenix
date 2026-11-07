@@ -1,0 +1,95 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+add_newline = false
+format = """$sudo$username$hostname[·](bold separator) $directory([·](bold separator) $git_branch)$git_status$character"""
+right_format = """(via $python$golang$lua${custom.shell})$all${custom.docker}( $cmd_duration)"""
+
+palette = "prompt"
+
+[palettes.prompt]
+primary = "blue"
+user = "green"
+separator = "white"
+
+[sudo]
+symbol = "󰌿"
+style = "bold yellow"
+format = "[$symbol]($style) "
+disabled = false
+
+[username]
+style_root = "bold red"
+style_user = "bold user"
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+ssh_symbol = " 󰌘"
+style = "bold user"
+format = "[@$hostname]($style)[$ssh_symbol](bright white) "
+ssh_only = false
+
+[directory]
+style = "bold primary"
+format = "[$path]($style) "
+truncation_length = 2
+truncate_to_repo = false
+
+[git_branch]
+symbol = "󰘬 "
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold primary"
+format = "[$stashed$staged$untracked$modified$deleted]($style)"
+staged = "󰐕 "
+stashed = "󰏗 "
+untracked = "󱔢 "
+modified = "󰛄 "
+deleted = "󰩺 "
+
+[python]
+symbol = "󰌠"
+format = "[$symbol( $version)( $virtualenv)]($style) "
+detect_extensions = []
+
+[golang]
+symbol = ""
+format = "[$symbol( $version)]($style) "
+version_format = 'v${raw}'
+
+[lua]
+symbol = "󰢱"
+format = "[$symbol( $version)]($style) "
+
+[custom.docker]
+symbol = " "
+style = "bold primary"
+command = """
+running=$(docker compose ps --quiet --status running 2>/dev/null | wc -l)
+if [ "$running" -gt 0 ]; then echo "$running"; fi
+"""
+shell = ["sh"]
+format = "with [$symbol( $output up)]($style)"
+detect_files = [
+  "Dockerfile",
+  "docker-compose.yml",
+  "docker-compose.yaml",
+  "compose.yml",
+  "compose.yaml",
+]
+
+[custom.shell]
+symbol = ""
+style = "bold green"
+format = "[$symbol( v$output)]($style) "
+detect_extensions = ["sh", "bash"]
+shell = ["bash", "--noprofile", "--norc"]
+command = 'echo "${BASH_VERSINFO[0]}.${BASH_VERSINFO[1]}"'
+
+[cmd_duration]
+format = "took [$duration]($style)"
+min_time = 20_000
+
+[package]
+disabled = true

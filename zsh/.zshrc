@@ -14,6 +14,9 @@ export AUTO_NOTIFY_BODY="It completed in %elapsed seconds"
 export FZF_DEFAULT_COMMAND="fd --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --hidden --exclude .mypy_cache --exclude .ruff_cache --exclude venv --exclude .venv"
 
+## Starship
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+
 # Print pokemon
 krabby random --no-title
 
@@ -189,4 +192,4 @@ add-zsh-hook chpwd auto_venv
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # Older fzf versions
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh --cmd cd)"
-eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
+eval "$(starship init zsh)"
