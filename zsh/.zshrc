@@ -58,9 +58,9 @@ autoload -Uz compinit && compinit -C
 zinit cdreplay -q
 
 zstyle ':completion:*' matcher-list \
-    'm:{[:lower:]}={[:upper:]}' \
-    'l:|=* r:|=*' \
-    'r:|=*'
+  'm:{[:lower:]}={[:upper:]}' \
+  'l:|=* r:|=*' \
+  'r:|=*'
 zstyle ':completion:*' completer _complete _approximate
 zstyle ':completion:*:*:*:*:files' ignored-patterns ''
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -69,6 +69,8 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:eza:*' fzf-preview '[[ -d $realpath ]] && eza --color=always --icons=always --oneline $realpath || bat --color=always --style=numbers $realpath || cat $realpath'
 zstyle ':fzf-tab:complete:rm:*' fzf-preview '[[ -d $realpath ]] && eza --color=always --icons=always --oneline $realpath || bat --color=always --style=numbers $realpath || cat $realpath'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icons=always --oneline $realpath'
+
+zstyle ':completion:*:*:scp:*' expand yes
 
 # ZLE
 autoload -U select-word-style
