@@ -110,6 +110,7 @@ alias gst="git stash"
 
 ## Docker
 alias dps="docker ps"
+alias dst="docker stats --no-stream"
 alias di="docker images"
 alias drmi="docker rmi"
 alias dc="docker compose"
