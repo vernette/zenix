@@ -2,7 +2,7 @@
   compression = 9
   whitespace = error
   preloadindex = true
-  pager = delta
+  pager = hunk pager
 
 [init]
   defaultBranch = master
@@ -25,16 +25,6 @@
   context = 10
   renames = copies
   interHunkContext = 10
-
-[interactive]
-  diffFilter = delta --color-only
-
-[delta]
-  true-color = always
-  dark = true
-  navigate = true
-	side-by-side = true
-  ; syntax-theme = zenburn
 
 [merge]
   conflictstyle = zdiff3
