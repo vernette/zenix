@@ -1,10 +1,16 @@
 # Envs
+
+## Basic
 export EDITOR=nvim
 export MANPAGER="$EDITOR +Man!"
 export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
+
+## Auto notify
 export AUTO_NOTIFY_THRESHOLD=20
 export AUTO_NOTIFY_TITLE="Hey! '%command' has just finished"
 export AUTO_NOTIFY_BODY="It completed in %elapsed seconds"
+
+## FZF
 export FZF_DEFAULT_COMMAND="fd --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --hidden --exclude .mypy_cache --exclude .ruff_cache --exclude venv --exclude .venv"
 
