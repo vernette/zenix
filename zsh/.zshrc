@@ -17,6 +17,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --hidden --exclude .mypy_cache -
 ## Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
+## Zoxide
+export _ZO_DOCTOR=0
+
 # Print pokemon
 krabby random --no-title
 
